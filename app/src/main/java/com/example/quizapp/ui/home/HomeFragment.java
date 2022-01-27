@@ -49,7 +49,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getContext(), QuizManager.class);
-                intent.putExtra("subject", "MAD");
+                intent.putExtra("subject", "C");
                 startActivity(intent);
             }
         });

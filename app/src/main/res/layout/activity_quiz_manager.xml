@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    android:backgroundTint="@color/lightgreen"
+    tools:context=".ui.user.QuizManager">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        style="@style/textview_extralarge"
+        android:layout_height="30dp"
+
+        android:text="Quiz manager" />
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+
+        android:background="@color/lightblue"
+        android:layout_height="20dp"
+        android:layout_marginTop="20dp"
+
+        android:text="types of question" />
+
+    <Spinner
+        android:id="@+id/subject"
+        style="@style/edittext_extralarge"
+        android:background="@color/lightblue"
+
+        />
+
+
+
+
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="number of questions"
+        android:textColorHint="@color/lightgreen"
+        app:hintTextColor="@color/lightgreen">
+        <EditText
+            android:id="@+id/no_of_question"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:inputType="number"
+
+            android:lines="1"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+
+        android:background="@color/lightblue"
+        android:layout_height="20dp"
+        android:layout_marginTop="20dp"
+
+        android:text="types of question" />
+
+    <Spinner
+        android:id="@+id/test_type"
+        style="@style/edittext_extralarge"
+        android:background="@color/lightblue"
+
+        />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:background="@color/lightgreen"
+
+        android:layout_height="20dp"
+        android:text="mode of test" />
+
+    <Spinner
+        android:id="@+id/test_mode"
+        style="@style/edittext_extralarge"
+
+        android:background="@color/lightgreen"
+
+        />
+
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="80dp">
+
+
+        <Button
+            android:id="@+id/exit"
+            android:layout_weight="1"
+            style="@style/button_medium_rounded"
+            android:layout_marginRight="20dp"
+
+            android:text="EXIT" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            style="@style/button_medium_rounded"
+            android:text="SUBMIT" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+
+
+
+</LinearLayout>

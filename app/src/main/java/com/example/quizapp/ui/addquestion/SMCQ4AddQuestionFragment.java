@@ -99,9 +99,8 @@ public class SMCQ4AddQuestionFragment extends Fragment {
         answer=getView().findViewById(R.id.answer);
         ArrayAdapter<Integer> adapter2 = new ArrayAdapter<Integer>(getActivity(), android.R.layout.simple_spinner_dropdown_item, optanswer);
         answer.setAdapter(adapter2);
-
-
         answer.setSelection(adapter2.getPosition(1));
+
         option1=getView().findViewById(R.id.option1);
         option2=getView().findViewById(R.id.option2);
         option3=getView().findViewById(R.id.option3);

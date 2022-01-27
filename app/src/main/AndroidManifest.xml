@@ -16,10 +16,10 @@
             android:name=".ui.addquestion.AddQuestionDashboard"
             android:exported="false" />
         <activity
-            android:name=".ui.user.QuizDashboard"
+            android:name=".ui.user.QuizManager"
             android:exported="false" />
         <activity
-            android:name=".ui.user.QuizManager"
+            android:name=".ui.user.QuizDashboard"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -4,20 +4,57 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.quizapp.R;
+import com.example.quizapp.backend.data.DATA;
 
 public class QuizManager extends AppCompatActivity {
-    Button exit4, ok4;
-    Button b;
+    Button exit, ok;
+    EditText  no_of_question;
+    Spinner test_mode, test_type, subject;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz_dashboard);
-        exit4=findViewById(R.id.exit4);
-        exit4.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_quiz_manager);
+
+        subject=findViewById(R.id.subject);
+        no_of_question=findViewById(R.id.no_of_question);
+        test_mode=findViewById(R.id.test_mode);
+        test_type=findViewById(R.id.test_type);
+
+        exit=findViewById(R.id.exit);
+        ok=findViewById(R.id.submit);
+
+
+        ArrayAdapter<String> adapter1= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, DATA.subject);
+        subject.setAdapter(adapter1);
+        subject.setSelection(adapter1.getPosition("DSA"));
+
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, DATA.test_type);
+        test_type.setAdapter(adapter2);
+        test_type.setSelection(adapter2.getPosition("All"));
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, DATA.test_mode);
+        test_mode.setAdapter(adapter3);
+        test_mode.setSelection(adapter3.getPosition("Single_Mode"));
+
+
+
+
+
+        Bundle bundle=getIntent().getExtras();
+        if(!bundle.get("subject").toString().trim().matches("")){
+
+            subject.setSelection(adapter1.getPosition(bundle.get("subject").toString()));
+
+        }
+        exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -25,14 +62,21 @@ public class QuizManager extends AppCompatActivity {
             }
         });
 
-        ok4=findViewById(R.id.ok4);
-        ok4.setOnClickListener(new View.OnClickListener() {
+        ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getApplicationContext(), QuizDashboard.class);
-                intent.putExtra("subject", "MAD");
-                finish();
-                startActivity(intent);
+                if (no_of_question.getText().toString().trim().matches("") || Integer.parseInt(no_of_question.getText().toString().trim())==0) {
+                    Toast.makeText(getApplicationContext(), "Please fill in all the required fields.", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    intent.putExtra("subject", subject.getSelectedItem().toString().trim());
+                    intent.putExtra("test_type", test_type.getSelectedItem().toString().trim());
+                    intent.putExtra("test_mode", test_mode.getSelectedItem().toString().trim());
+                    intent.putExtra("no_of_question", no_of_question.getText().toString());
+                    finish();
+                    startActivity(intent);
+                }
             }
         });
 
