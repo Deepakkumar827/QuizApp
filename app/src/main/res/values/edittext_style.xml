@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="edittext_small" >
+        <item name="android:layout_width">@dimen/width_small</item>
+        <item name="android:layout_height">@dimen/height_small</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="backgroundTint">@color/default_background_color</item>
+
+    </style>
+
+    <style name="edittext_medium" >
+        <item name="android:layout_width">@dimen/width_medium</item>
+        <item name="android:layout_height">@dimen/height_medium</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:gravity">center</item>
+
+        <item name="backgroundTint">@color/default_background_color</item>
+    </style>
+
+    <style name="edittext_large" >
+        <item name="android:layout_width">@dimen/width_large</item>
+        <item name="android:layout_height">@dimen/height_large</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="backgroundTint">@color/default_background_color</item>
+
+    </style>
+
+    <style name="edittext_extralarge" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/height_extralarge</item>
+        <item name="android:gravity">center</item>
+
+    </style>
+
+
+
+    <style name="edittext_small_rounded" >
+        <item name="android:layout_width">@dimen/width_small</item>
+        <item name="android:layout_height">@dimen/height_small</item>
+        <item name="android:gravity">center</item>
+        <item name="backgroundTint">@color/default_background_color</item>
+
+    </style>
+
+    <style name="edittext_medium_rounded" >
+        <item name="android:layout_width">@dimen/width_medium</item>
+        <item name="android:layout_height">@dimen/height_medium</item>
+        <item name="android:gravity">center</item>
+        <item name="backgroundTint">@color/default_background_color</item>
+
+    </style>
+
+    <style name="edittext_large_rounded" >
+        <item name="android:layout_width">@dimen/width_large</item>
+        <item name="android:layout_height">@dimen/height_large</item>
+        <item name="android:gravity">center</item>
+        <item name="backgroundTint">@color/default_background_color</item>
+
+    </style>
+
+    <style name="edittext_extralarge_rounded" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/height_extralarge</item>
+        <item name="android:gravity">center</item>
+        <item name="backgroundTint">@color/default_background_color</item>
+
+    </style>
+
+
+
+
+
+
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable-v24/rounded_border.xml" value="0.26614583333333336" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/back.xml" value="0.18802083333333333" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/gradient.xml" value="0.1140625" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/round_border.xml" value="0.25052083333333336" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/rounded_border.xml" value="0.26614583333333336" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_add_question_dashboard.xml" value="0.264" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_add_question_manager.xml" value="0.25" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_instruction_for_add_button.xml" value="0.18385416666666668" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_instructions.xml" value="0.19166666666666668" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_main.xml" value="0.24635416666666668" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_quiz_dashboard.xml" value="0.176" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_quiz_manager.xml" value="0.24635416666666668" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_dashboard.xml" value="0.25" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_home.xml" value="0.1892430278884462" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_i_v_a_add_q_dashboard.xml" value="0.25" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_i_v_a_add_question.xml" value="0.2" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_m_m_c_q4_add_question.xml" value="0.21770833333333334" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_n_v_a_add_question.xml" value="0.21770833333333334" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_s_m_c_q4_add_q_dashboard.xml" value="0.25" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_s_m_c_q4_add_question.xml" value="0.21770833333333334" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_s_w_a_add_question.xml" value="0.21770833333333334" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

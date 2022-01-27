@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    tools:context=".ui.addquestion.IVAAddQuestionFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/edittext_extralarge"
+        android:text="creator"
+        android:layout_height="20dp"
+        android:textSize="16sp"
+        android:background="@color/lightyellow"/>
+
+    <Spinner
+        android:id="@+id/creator"
+        style="@style/otherview_extralarge"
+        android:tooltipText="tool tip"
+        android:background="@color/lightyellow"
+
+        />
+
+
+
+
+    <TextView
+        android:id="@+id/textView6"
+        style="@style/textview_extralarge"
+        android:layout_height="20dp"
+        android:textSize="16sp"
+        android:background="@color/lightgreen"
+        android:text="quetion" />
+
+    <EditText
+        android:id="@+id/question"
+        style="@style/edittext_extralarge"
+        android:inputType="textMultiLine"
+        android:hint="enter question"
+        android:textSize="24sp"
+        android:background="@color/lightgreen"/>
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_height="20dp"
+        android:textSize="16sp"
+        android:background="@color/lightblue"
+        style="@style/textview_extralarge"
+        android:text="answer" />
+
+
+
+    <EditText
+        android:id="@+id/answer"
+        style="@style/edittext_extralarge"
+        android:background="@color/lightblue"
+        android:hint="enter answer"
+        android:inputType="numberDecimal"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="80dp">
+
+
+        <Button
+            android:id="@+id/exit"
+            android:layout_weight="1"
+            style="@style/button_medium_rounded"
+            android:layout_marginRight="20dp"
+
+            android:text="EXIT" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            style="@style/button_medium_rounded"
+            android:text="SUBMIT" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+</LinearLayout>

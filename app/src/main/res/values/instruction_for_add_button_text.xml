@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="instructions_for_add_button">Button in Android
+Difficulty Level : Medium
+Last Updated : 17 Aug, 2021
+In Android applications, a Button is a user interface that is used to perform some action when clicked or tapped. It is a very common widget in Android and developers often use it. This article demonstrates how to create a button in Android Studio.
+
+The Class Hierarchy of the Button Class in Kotlin
+The Class Hierarchy of the Button Class in Kotlin
+
+XML Attributes of Button Widget
+XML Attributes
+
+Description
+
+android:id	Used to specify the id of the view.
+android:text	Used to the display text of the button.
+android:textColor	Used to the display color of the text.
+android:textSize	Used to the display size of the text.
+android:textStyle	Used to the display style of the text like Bold, Italic, etc.
+android:textAllCaps	Used to display text in Capital letters.
+android:background	Used to set the background of the view.
+android:padding	Used to set the padding of the view.
+android:visibility	Used to set the visibility of the view.
+android:gravity	Used to specify the gravity of the view like center, top, bottom, etc
+Example
+In this example step by step demonstration of creating a Button will be covered. The application will consist of a button that displays a toast message when the user taps on it.
+
+Note: Following steps are performed on Android Studio version 4.0
+
+Step 1: Create a new project
+
+Click on File, then New => New Project.
+Choose “Empty Activity” for the project template.
+Select language as Kotlin.
+Select the minimum SDK as per your need.
+Step 2: Modify the strings.xml file
+
+Navigate to the strings.xml file under the “values” directory of the resource folder. This file will contain all strings that are used in the Application. Below is the appropriate code.
+
+Step 4: Accessing the button in the MainActivity file
+
+Add functionality of button in the MainActivity file. Here describe the operation to display a Toast message when the user taps on the button. Below is the code to carry out this task.
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate( Bundle savedInstanceState ) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // storing ID of the button
+        // in a variable
+        Button button = (Button)findViewById(R.id.button);
+
+        // operations to be performed
+        // when user tap on the button
+        if (button != null) {
+            button.setOnClickListener((View.OnClickListener)(new View.OnClickListener() {
+                    public final void onClick(View it) {
+
+                    // displaying a toast message
+                    Toast.makeText((Context)MainActivity.this, R.string.message, Toast.LENGTH_LONG).show();
+                }
+            }));
+        }
+    }
+}
+    </string>
+</resources>
