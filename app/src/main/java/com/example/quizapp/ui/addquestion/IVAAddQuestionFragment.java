@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SearchView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.quizapp.R;
@@ -34,7 +35,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
  */
 public class IVAAddQuestionFragment extends Fragment {
     EditText  question, answer;
-    Spinner creator;
     Button exit, submit;
     FireBaseManager fireBaseManager=new FireBaseManager();
 
@@ -98,10 +98,7 @@ public class IVAAddQuestionFragment extends Fragment {
         exit=getView().findViewById(R.id.exit);
         submit=getView().findViewById(R.id.submit);
 
-        creator=getView().findViewById(R.id.creator);
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, DATA.creator);
-        creator.setAdapter(adapter1);
-        creator.setSelection(adapter1.getPosition("Deepak"));
+
 
 
 
@@ -117,7 +114,8 @@ public class IVAAddQuestionFragment extends Fragment {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String cr=((Spinner)getActivity().findViewById(R.id.creator)).getSelectedItem().toString().trim();
+
+                String cr=AddQuestionDashboard.device_id;
                 String sub=((Spinner)getActivity().findViewById(R.id.spinner_subject)).getSelectedItem().toString().trim();
                 String qs=question.getText().toString().trim();
                 String s_ans=answer.getText().toString().trim();

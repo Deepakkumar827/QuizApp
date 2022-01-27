@@ -69,6 +69,18 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/creator"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textAlignment="center"
+
+            android:text="Creator: " />
+
+
+
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/add_question_dashboard_fragment"
             android:layout_marginTop="10dp"
@@ -79,9 +91,9 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-       <View
-           android:layout_width="match_parent"
-           android:layout_height="100dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
 
 
 

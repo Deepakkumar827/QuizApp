@@ -4,26 +4,37 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.quizapp.R;
 import com.example.quizapp.backend.data.DATA;
 
+import org.w3c.dom.Text;
+
 
 public class AddQuestionDashboard extends AppCompatActivity {
 
+    public static String device_id;
 
     private Spinner  subjectspinner, quesionspinner;
+    TextView creater;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_question_manager);
+
+        creater=findViewById(R.id.creator);
+        device_id=Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
+        creater.setText("Device ID: " +device_id);
 
         subjectspinner=findViewById(R.id.spinner_subject);
         ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, DATA.subject);

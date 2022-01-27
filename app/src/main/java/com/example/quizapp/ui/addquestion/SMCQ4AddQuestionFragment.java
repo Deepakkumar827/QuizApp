@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.quizapp.R;
@@ -30,7 +31,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
  */
 public class SMCQ4AddQuestionFragment extends Fragment {
 
-    Spinner creator;
+    TextView creator;
     Button exit, submit;
     EditText question, option1, option2, option3, option4;
     Spinner answer;
@@ -93,13 +94,14 @@ public class SMCQ4AddQuestionFragment extends Fragment {
         exit=getView().findViewById(R.id.exit);
         submit=getView().findViewById(R.id.submit);
         creator=getView().findViewById(R.id.creator);
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, DATA.creator);
-        creator.setAdapter(adapter1);
-        creator.setSelection(adapter1.getPosition("Deepak"));
+
+
         answer=getView().findViewById(R.id.answer);
         ArrayAdapter<Integer> adapter2 = new ArrayAdapter<Integer>(getActivity(), android.R.layout.simple_spinner_dropdown_item, optanswer);
         answer.setAdapter(adapter2);
-        answer.setSelection(adapter1.getPosition("1"));
+
+
+        answer.setSelection(adapter2.getPosition(1));
         option1=getView().findViewById(R.id.option1);
         option2=getView().findViewById(R.id.option2);
         option3=getView().findViewById(R.id.option3);
@@ -114,7 +116,7 @@ public class SMCQ4AddQuestionFragment extends Fragment {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String cr=((Spinner)getActivity().findViewById(R.id.creator)).getSelectedItem().toString();
+                String cr=AddQuestionDashboard.device_id;
                 String sub=((Spinner)getActivity().findViewById(R.id.spinner_subject)).getSelectedItem().toString();
                 String qs=question.getText().toString().trim();
                 String opt1=option1.getText().toString().trim();

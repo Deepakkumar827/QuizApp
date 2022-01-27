@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,58 +11,62 @@
     <!-- TODO: Update blank fragment layout -->
 
 
-    <TextView
-        android:id="@+id/textView4"
-        style="@style/edittext_extralarge"
-        android:text="creator"
-        android:layout_height="20dp"
-        android:textSize="16sp"
-        android:background="@color/lightyellow"/>
-
-    <Spinner
-        android:id="@+id/creator"
-        style="@style/otherview_extralarge"
-        android:tooltipText="tool tip"
-        android:background="@color/lightyellow"
-
-        />
-
-
-
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textView2"
+        android:textSize="18sp"
+        android:textStyle="bold"
         style="@style/textview_extralarge"
-        android:layout_height="20dp"
-        android:textSize="16sp"
-        android:background="@color/lightgreen"
-        android:text="quetion" />
+        android:layout_height="30dp"
 
-    <EditText
-        android:id="@+id/question"
-        style="@style/edittext_extralarge"
-        android:inputType="textMultiLine"
-        android:hint="enter question"
-        android:textSize="24sp"
-        android:background="@color/lightgreen"/>
-
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_height="20dp"
-        android:textSize="16sp"
-        android:background="@color/lightblue"
-        style="@style/textview_extralarge"
-        android:text="answer" />
+        android:text="Decimal answer type question" />
 
 
 
-    <EditText
-        android:id="@+id/answer"
-        style="@style/edittext_extralarge"
-        android:background="@color/lightblue"
-        android:hint="enter answer"
-        android:inputType="numberDecimal"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="30dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Question"
+        android:textColorHint="@color/lightgreen"
+        app:hintTextColor="@color/lightgreen">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:textSize="20sp"
+            />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="30dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Answer"
+        android:textColorHint="@color/lightgreen"
+        app:hintTextColor="@color/lightgreen">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/answer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:textSize="20sp"
+            />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
