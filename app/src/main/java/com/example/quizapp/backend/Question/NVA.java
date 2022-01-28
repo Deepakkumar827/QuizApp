@@ -2,22 +2,27 @@ package com.example.quizapp.backend.Question;
 
 public class NVA extends Question {
     static final String type="IVA";  ////may be final/static
+    String message="currently unavailable";
+
     String subject;
-    static int nVAidgenerator=0;
-    int NVAid;
     String creator;
     String question;
     float answer;
 
-    protected NVA(String creator, String subject, String question, float answer){
+    protected NVA(String creator, String subject, String question, float answer, String message){
         super();
         this.creator=creator;
         this.subject=subject;
         this.question=question;
         this.answer=answer;
-        NVAid=nVAidgenerator++;
-        super.questionid=Question.idgenerator++;
+        this.message=message;
 
+    }
+
+
+    @Override
+    public String getMessage() {
+        return message;
     }
 
     @Override
@@ -30,13 +35,6 @@ public class NVA extends Question {
         return subject;
     }
 
-    public static int getTotalNVAgenerated() {
-        return nVAidgenerator;
-    }
-
-    public int getNVAid() {
-        return NVAid;
-    }
 
     @Override
     public String getCreator() {

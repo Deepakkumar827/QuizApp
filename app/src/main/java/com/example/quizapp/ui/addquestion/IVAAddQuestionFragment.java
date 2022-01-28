@@ -1,30 +1,24 @@
 package com.example.quizapp.ui.addquestion;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.SearchView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.quizapp.R;
-import com.example.quizapp.backend.Question.IVA;
-import com.example.quizapp.backend.Question.M;
 import com.example.quizapp.backend.Question.Question;
-import com.example.quizapp.backend.data.AllQuestion;
-import com.example.quizapp.backend.data.DATA;
 import com.example.quizapp.backend.firebase.FireBaseManager;
-import com.example.quizapp.backend.firebase.Test;
 import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
@@ -34,9 +28,10 @@ import com.google.android.gms.tasks.OnSuccessListener;
  * create an instance of this fragment.
  */
 public class IVAAddQuestionFragment extends Fragment {
-    EditText  question, answer;
+    EditText  question, answer, message;
     Button exit, submit;
     FireBaseManager fireBaseManager=new FireBaseManager();
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -97,6 +92,8 @@ public class IVAAddQuestionFragment extends Fragment {
         answer=getView().findViewById(R.id.answer);
         exit=getView().findViewById(R.id.exit);
         submit=getView().findViewById(R.id.submit);
+        message=view.findViewById(R.id.message);
+
 
 
 
@@ -119,30 +116,40 @@ public class IVAAddQuestionFragment extends Fragment {
                 String sub=((Spinner)getActivity().findViewById(R.id.spinner_subject)).getSelectedItem().toString().trim();
                 String qs=question.getText().toString().trim();
                 String s_ans=answer.getText().toString().trim();
-                if (cr.matches("") || sub.matches("") || qs.matches("") || s_ans.matches("")) {
+                String msg=message.getText().toString().trim();
+
+                if (cr.matches("") || sub.matches("") || qs.matches("") || s_ans.matches("") || msg.matches("")) {
                     Toast.makeText(getContext(), "Please fill in all the required fields.", Toast.LENGTH_SHORT).show();
                 }
                 else{
+                    int check=0;
                     int ans=Integer.parseInt(s_ans);
-                    Question question=Question.createIVA(cr, sub, qs, ans);
+                    Question question=Question.createIVA(cr, sub, qs, ans, msg);
 //                AllQuestion.allQuestion.add(question);
 
 //                    Test.abc();
                     fireBaseManager.add((Question) question).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
-                            Toast.makeText(getActivity(),"Success1",Toast.LENGTH_LONG).show();
-
-                        }
-                    }).addOnCanceledListener(new OnCanceledListener() {
-                        @Override
-                        public void onCanceled() {
-                            Toast.makeText(getActivity(),"cancelled",Toast.LENGTH_LONG).show();
+                            int check=1;
+                            AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
+                            alertDialog.setTitle("Congratulation");
+                            alertDialog.setMessage("successfully added to firebase server");
+                            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.dismiss();
+                                            getActivity().finish();
+                                        }
+                                    });
+                            alertDialog.show();
 
                         }
                     });
-//                Toast.makeText(getActivity(),"Failed",Toast.LENGTH_LONG).show();
-                    getActivity().finish();
+
+                    if(check==0){
+                        Toast.makeText(getActivity(),"FAILED",Toast.LENGTH_LONG).show();
+                    }
                 }
 
             }

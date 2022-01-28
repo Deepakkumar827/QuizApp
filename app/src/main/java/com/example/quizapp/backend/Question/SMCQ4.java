@@ -5,9 +5,8 @@ package com.example.quizapp.backend.Question;
 
 public class SMCQ4 extends Question {
     static final String type="SMCQ4";  ////may be final/static
+    String message="currently unavailable";
     String subject;
-    static int sMCQ4idgenerator=0;
-    int SMCQ4id;
     String creator;
     String question;
     String choice1;
@@ -16,7 +15,7 @@ public class SMCQ4 extends Question {
     String choice4;
     int answer;
 
-    protected SMCQ4(String creator, String subject, String question, String choice1, String choice2, String choice3, String choice4, int answer){
+    protected SMCQ4(String creator, String subject, String question, String choice1, String choice2, String choice3, String choice4, int answer, String message){
         super();
         this.creator=creator;
         this.subject=subject;
@@ -26,11 +25,13 @@ public class SMCQ4 extends Question {
         this.choice3=choice3;
         this.choice4=choice4;
         this.answer=answer;
-        SMCQ4id=sMCQ4idgenerator++;
-        super.questionid=Question.idgenerator++;
+        this.message=message;
 
+    }
 
-
+    @Override
+    public String getMessage() {
+        return message;
     }
 
     @Override
@@ -43,13 +44,8 @@ public class SMCQ4 extends Question {
         return subject;
     }
 
-    public static int getSMCQ4generated() {
-        return sMCQ4idgenerator;
-    }
 
-    public int getSMCQ4id() {
-        return SMCQ4id;
-    }
+
 
     @Override
     public String getCreator() {

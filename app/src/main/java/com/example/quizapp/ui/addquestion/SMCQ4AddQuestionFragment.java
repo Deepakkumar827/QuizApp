@@ -1,9 +1,11 @@
 package com.example.quizapp.ui.addquestion;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -33,7 +35,7 @@ public class SMCQ4AddQuestionFragment extends Fragment {
 
     TextView creator;
     Button exit, submit;
-    EditText question, option1, option2, option3, option4;
+    EditText question, option1, option2, option3, option4, message;
     Spinner answer;
     static Integer[] optanswer=new Integer[]{1, 2, 3, 4};
     FireBaseManager fireBaseManager = new FireBaseManager();
@@ -94,6 +96,7 @@ public class SMCQ4AddQuestionFragment extends Fragment {
         exit=getView().findViewById(R.id.exit);
         submit=getView().findViewById(R.id.submit);
         creator=getView().findViewById(R.id.creator);
+        message=view.findViewById(R.id.message);
 
 
         answer=getView().findViewById(R.id.answer);
@@ -123,25 +126,39 @@ public class SMCQ4AddQuestionFragment extends Fragment {
                 String opt3=option3.getText().toString().trim();
                 String opt4=option4.getText().toString().trim();
                 String s_ans=answer.getSelectedItem().toString().trim();
-                if (cr.matches("") || sub.matches("") || qs.matches("") || opt1.matches("") || opt2.matches("") || opt3.matches("") || opt4.matches("") || s_ans.matches("")) {
+                String msg=message.getText().toString().trim();
+
+
+                if (cr.matches("") || sub.matches("") || qs.matches("") || opt1.matches("") || opt2.matches("") || opt3.matches("") || opt4.matches("") || s_ans.matches("") ||  msg.matches("")) {
                     Toast.makeText(getContext(), "Please fill in all the required fields.", Toast.LENGTH_SHORT).show();
                 }
                 else {
+                    int check=0;
                     int  ans=Integer.parseInt(s_ans);
-                    Question question=Question.createSMCQ4(cr, sub, qs,opt1, opt2, opt3, opt4, ans);
+                    Question question=Question.createSMCQ4(cr, sub, qs,opt1, opt2, opt3, opt4, ans, msg);
                     AllQuestion.allQuestion.add(question);
                     fireBaseManager.add(question).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
-                            Toast.makeText(getActivity(),"Success3",Toast.LENGTH_LONG).show();
-                        }
-                    }).addOnCanceledListener(new OnCanceledListener() {
-                        @Override
-                        public void onCanceled() {
-                            Toast.makeText(getActivity(),"cancelled",Toast.LENGTH_LONG).show();
+                            int check=1;
+                            AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
+                            alertDialog.setTitle("Congratulation");
+                            alertDialog.setMessage("successfully added to firebase server");
+                            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.dismiss();
+                                            getActivity().finish();
+                                        }
+                                    });
+                            alertDialog.show();
+
                         }
                     });
-                    getActivity().finish();
+
+                    if(check==0){
+                        Toast.makeText(getActivity(),"FAILED",Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });

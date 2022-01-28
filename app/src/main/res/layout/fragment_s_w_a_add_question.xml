@@ -66,6 +66,29 @@
 
 
 
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="30dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Enter comment"
+        android:textColorHint="@color/lightgreen"
+        app:hintTextColor="@color/lightgreen">
+        <EditText
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="left"
+            android:textSize="20sp"
+
+            android:inputType="textMultiLine"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_marginTop="20dp"

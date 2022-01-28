@@ -7,9 +7,8 @@ import java.util.Locale;
 public class SWA extends Question {
     static final String type="SWA";  ////may be final/static
 
+    String message="currently unavailable";
     String subject;
-    static int sWAidgenerator=0;
-    int SWAid;
     String creator;
     String question;
     String answer;
@@ -18,16 +17,21 @@ public class SWA extends Question {
 
 
 
-    protected SWA(String creator, String subject, String question, String answer) {
+    protected SWA(String creator, String subject, String question, String answer, String message) {
         super();
         this.creator=creator;
         this.subject=subject;
         this.question=question;
         this.answer=answer.toLowerCase(Locale.ROOT).trim();
-        this.SWAid=sWAidgenerator++;
         this.subject=subject;
-        super.questionid=Question.idgenerator++;
+        this.message=message;
 
+    }
+
+
+    @Override
+    public String getMessage() {
+        return message;
     }
 
 
@@ -42,9 +46,6 @@ public class SWA extends Question {
         return subject;
     }
 
-    public int getSWAid() {
-        return SWAid;
-    }
 
     @Override
     public String getCreator() {
@@ -62,9 +63,6 @@ public class SWA extends Question {
 
 
 
-    public static final int getTotalSWAGenerated() {
-        return sWAidgenerator;
-    }
 
 
 }

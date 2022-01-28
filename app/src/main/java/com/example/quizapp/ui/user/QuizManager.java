@@ -1,19 +1,27 @@
 package com.example.quizapp.ui.user;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.core.widget.NestedScrollView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.text.Layout;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.quizapp.R;
 import com.example.quizapp.backend.data.DATA;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class QuizManager extends AppCompatActivity {
     Button exit, ok;
@@ -23,6 +31,9 @@ public class QuizManager extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_manager);
+
+
+
 
         subject=findViewById(R.id.subject);
         no_of_question=findViewById(R.id.no_of_question);
@@ -39,21 +50,24 @@ public class QuizManager extends AppCompatActivity {
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, DATA.test_type);
         test_type.setAdapter(adapter2);
-        test_type.setSelection(adapter2.getPosition("All"));
+        test_type.setSelection(adapter2.getPosition("only_SMCQ4"));
+        test_type.setEnabled(false);
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, DATA.test_mode);
         test_mode.setAdapter(adapter3);
         test_mode.setSelection(adapter3.getPosition("Single_Mode"));
+        test_mode.setEnabled(false);
 
 
 
 
 
         Bundle bundle=getIntent().getExtras();
-        if(!bundle.get("subject").toString().trim().matches("")){
-
-            subject.setSelection(adapter1.getPosition(bundle.get("subject").toString()));
-
-        }
+//        if(!bundle.get("subject").toString().trim().matches("")){
+//
+//            subject.setSelection(adapter1.getPosition(bundle.get("subject").toString()));
+//
+//        }
+        subject.setSelection(adapter1.getPosition("java"));
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
