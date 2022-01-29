@@ -128,28 +128,8 @@ public class IVAAddQuestionFragment extends Fragment {
 //                AllQuestion.allQuestion.add(question);
 
 //                    Test.abc();
-                    fireBaseManager.add((Question) question).addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void unused) {
-                            int check=1;
-                            AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
-                            alertDialog.setTitle("Congratulation");
-                            alertDialog.setMessage("successfully added to firebase server");
-                            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                    new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            dialog.dismiss();
-                                            getActivity().finish();
-                                        }
-                                    });
-                            alertDialog.show();
 
-                        }
-                    });
-
-                    if(check==0){
-                        Toast.makeText(getActivity(),"FAILED",Toast.LENGTH_LONG).show();
-                    }
+                   AddToFirebase.add(getActivity(), question);
                 }
 
             }

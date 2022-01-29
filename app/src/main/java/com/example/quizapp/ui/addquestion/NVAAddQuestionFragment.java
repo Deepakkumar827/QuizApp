@@ -21,6 +21,7 @@ import com.example.quizapp.R;
 import com.example.quizapp.backend.Question.Question;
 import com.example.quizapp.backend.firebase.FireBaseManager;
 import com.google.android.gms.tasks.OnCanceledListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 /**
@@ -123,28 +124,9 @@ public class NVAAddQuestionFragment extends Fragment {
                     Question question=Question.createNVA(cr, sub, qs, ans, msg);
 //                    AllQuestion.allQuestion.add(question);
 
-                    fireBaseManager.add(question).addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void unused) {
-                            int check=1;
-                            AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
-                            alertDialog.setTitle("Congratulation");
-                            alertDialog.setMessage("successfully added to firebase server");
-                            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                    new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            dialog.dismiss();
-                                            getActivity().finish();
-                                        }
-                                    });
-                            alertDialog.show();
+                    AddToFirebase.add(getActivity(), question);
 
-                        }
-                    });
 
-                    if(check==0){
-                        Toast.makeText(getActivity(),"FAILED",Toast.LENGTH_LONG).show();
-                    }
 
                 }
 
