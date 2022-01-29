@@ -2,9 +2,10 @@ package com.example.quizapp.backend.Question;
 
 //SWA- single word answer
 
+import java.io.Serializable;
 import java.util.Locale;
 
-public class SWA extends Question {
+public class SWA extends Question implements Serializable {
     static final String type="SWA";  ////may be final/static
 
     String message="currently unavailable";

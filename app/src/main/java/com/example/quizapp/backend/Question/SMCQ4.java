@@ -3,7 +3,9 @@ package com.example.quizapp.backend.Question;
 
 ///MMCQ4- multiple choice quesion with single answer with four choice
 
-public class SMCQ4 extends Question {
+import java.io.Serializable;
+
+public class SMCQ4 extends Question implements Serializable {
     static final String type="SMCQ4";  ////may be final/static
     String message="currently unavailable";
     String subject;

@@ -20,8 +20,6 @@ import android.widget.Toast;
 
 import com.example.quizapp.R;
 import com.example.quizapp.backend.Question.Question;
-import com.example.quizapp.backend.data.AllQuestion;
-import com.example.quizapp.backend.data.DATA;
 import com.example.quizapp.backend.firebase.FireBaseManager;
 import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -137,8 +135,7 @@ public class SMCQ4AddQuestionFragment extends Fragment {
                     int check=0;
                     int  ans=Integer.parseInt(s_ans);
                     Question question=Question.createSMCQ4(cr, sub, qs,opt1, opt2, opt3, opt4, ans, msg);
-                    AllQuestion.allQuestion.add(question);
-                    AddToFirebase.add(getActivity(), question);
+                     AddToFirebase.add(getActivity(), question);
 
 
                 }

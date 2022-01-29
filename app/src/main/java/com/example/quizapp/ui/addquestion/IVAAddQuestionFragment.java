@@ -125,7 +125,6 @@ public class IVAAddQuestionFragment extends Fragment {
                     int check=0;
                     int ans=Integer.parseInt(s_ans);
                     Question question=Question.createIVA(cr, sub, qs, ans, msg);
-//                AllQuestion.allQuestion.add(question);
 
 //                    Test.abc();
 

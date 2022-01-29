@@ -6,7 +6,9 @@
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable-v24/rounded_border.xml" value="0.26614583333333336" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/back.xml" value="0.18802083333333333" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/circle.xml" value="0.1953125" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/code_for_progressbar.xml" value="0.26614583333333336" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/gradient.xml" value="0.1140625" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.26614583333333336" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/progress_bar.xml" value="0.2625" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/round_border.xml" value="0.25052083333333336" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/rounded_border.xml" value="0.26614583333333336" />
@@ -15,8 +17,9 @@
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_instruction_for_add_button.xml" value="0.18385416666666668" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_instructions.xml" value="0.19166666666666668" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_quiz_dashboard.xml" value="0.176" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_quiz_dashboard.xml" value="0.264" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_quiz_manager.xml" value="0.24635416666666668" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/custom_timeout_dialog.xml" value="0.4" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_home.xml" value="0.1892430278884462" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_i_v_a_add_q_dashboard.xml" value="0.25" />
@@ -27,6 +30,7 @@
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_notifications.xml" value="0.116751269035533" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_s_m_c_q4_add_q_dashboard.xml" value="0.25" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_s_m_c_q4_add_question.xml" value="0.21770833333333334" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_s_m_c_q4user.xml" value="0.25" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_s_w_a_add_question.xml" value="0.10849056603773585" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_s_w_auser.xml" value="0.17135416666666667" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/subject_cardview.xml" value="0.25" />

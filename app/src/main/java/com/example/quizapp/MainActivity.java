@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.quizapp.backend.data.QuestionData;
 import com.example.quizapp.ui.addquestion.AddQuestionDashboard;
 import com.example.quizapp.ui.user.QuizManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -28,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        QuestionData.setmAD_SMCQ();
+
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each

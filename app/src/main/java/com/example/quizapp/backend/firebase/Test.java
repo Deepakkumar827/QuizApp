@@ -14,9 +14,9 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Test {
     static FireBaseManager fbm=new FireBaseManager();
     public static void abc(){
-        QuestionData.setmAD_SMCQ();
+        /*QuestionData.setmAD_SMCQ();
         for(Question q: QuestionData.mAD_SMCQ){
             fbm.add(q);
-        }
+        }*/
     }
 }

@@ -122,7 +122,6 @@ public class NVAAddQuestionFragment extends Fragment {
                     int check=0;
                     float ans=(float) Double.parseDouble(s_ans);
                     Question question=Question.createNVA(cr, sub, qs, ans, msg);
-//                    AllQuestion.allQuestion.add(question);
 
                     AddToFirebase.add(getActivity(), question);
 

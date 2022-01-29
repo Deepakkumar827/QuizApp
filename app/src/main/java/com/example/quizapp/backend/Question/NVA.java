@@ -1,6 +1,8 @@
 package com.example.quizapp.backend.Question;
 
-public class NVA extends Question {
+import java.io.Serializable;
+
+public class NVA extends Question implements Serializable {
     static final String type="IVA";  ////may be final/static
     String message="currently unavailable";
 

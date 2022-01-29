@@ -4,7 +4,9 @@ package com.example.quizapp.backend.Question;
 
 //// IVA integer value answer
 
-public class IVA extends Question {
+import java.io.Serializable;
+
+public class IVA extends Question implements Serializable {
     static final String type="IVA";  ////may be final/static
     String message="currently unavailable";
     String subject;

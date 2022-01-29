@@ -6,7 +6,9 @@ package com.example.quizapp.backend.Question;
 
 ////
 
-public class MMCQ4 {
+import java.io.Serializable;
+
+public class MMCQ4 implements Serializable {
     static final String type="IVA";  ////may be final/static
     String subject;
 

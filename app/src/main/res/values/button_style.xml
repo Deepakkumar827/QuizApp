@@ -35,6 +35,8 @@
         <item name="android:layout_width">@dimen/width_small</item>
         <item name="android:layout_height">@dimen/height_small</item>
         <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/round_border</item>
+
 
     </style>
 

@@ -18,15 +18,23 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.quizapp.R;
+import com.example.quizapp.backend.Question.Question;
+import com.example.quizapp.backend.Question.SMCQ4;
 import com.example.quizapp.backend.data.DATA;
+import com.example.quizapp.backend.data.QuestionData;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class QuizManager extends AppCompatActivity {
     Button exit, ok;
     EditText  no_of_question;
     Spinner test_mode, test_type, subject;
+    List<Question> questionList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,12 +91,19 @@ public class QuizManager extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please fill in all the required fields.", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    intent.putExtra("subject", subject.getSelectedItem().toString().trim());
-                    intent.putExtra("test_type", test_type.getSelectedItem().toString().trim());
-                    intent.putExtra("test_mode", test_mode.getSelectedItem().toString().trim());
-                    intent.putExtra("no_of_question", no_of_question.getText().toString());
-                    finish();
+//                    intent.putExtra("subject", subject.getSelectedItem().toString().trim());
+//                    intent.putExtra("test_type", test_type.getSelectedItem().toString().trim());
+//                    intent.putExtra("test_mode", test_mode.getSelectedItem().toString().trim());
+//                    intent.putExtra("no_of_question", no_of_question.getText().toString());
+
+                    questionList=QuestionData.mAD_SMCQ;
+
+                    Collections.shuffle(questionList);
+                    intent.putExtra("list", (Serializable) questionList);
+
                     startActivity(intent);
+                                        finish();
+
                 }
             }
         });

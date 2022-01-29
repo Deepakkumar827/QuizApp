@@ -1,6 +1,8 @@
 package com.example.quizapp.backend.Question;
 
-public  abstract class Question {
+import java.io.Serializable;
+
+public  abstract class Question implements Serializable {
 
 
 
