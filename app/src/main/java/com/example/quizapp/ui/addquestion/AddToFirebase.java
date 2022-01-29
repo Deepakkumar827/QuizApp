@@ -1,6 +1,9 @@
 package com.example.quizapp.ui.addquestion;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.os.AsyncTask;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,14 +23,16 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.net.URL;
+
 public class AddToFirebase {
     static AlertDialog.Builder builder;
 
 
 
 
-
     public static void add(FragmentActivity activity, Question question){
+
 
 
         builder = new AlertDialog.Builder(activity);
@@ -36,26 +41,35 @@ public class AddToFirebase {
         FireBaseManager fireBaseManager=new FireBaseManager();
 
 
-        if(question instanceof SMCQ4)
-            showalert(activity, question, fireBaseManager.addSMCQ4((SMCQ4) question));
+//        if(question instanceof SMCQ4)
+//            showalert(activity, question, fireBaseManager.addSMCQ4((SMCQ4) question));
+//
+//        else if(question instanceof IVA)
+//            showalert(activity, question, fireBaseManager.addIVA((IVA) question));
+//
+//
+//        else if(question instanceof SWA)
+//            showalert(activity, question, fireBaseManager.addSWA((SWA) question));
+//
+//        else if(question instanceof NVA)
+//            showalert(activity, question, fireBaseManager.addNVA((NVA) question));
+//
+//        else if(question != null)
+//            showalert(activity, question, fireBaseManager.add(question));
+//
+//        else
+//            Toast.makeText(activity.getApplicationContext(),"trying to add null object",Toast.LENGTH_LONG).show();
 
-        else if(question instanceof IVA)
-            showalert(activity, question, fireBaseManager.addIVA((IVA) question));
-
-
-        else if(question instanceof SWA)
-            showalert(activity, question, fireBaseManager.addSWA((SWA) question));
-
-        else if(question instanceof NVA)
-            showalert(activity, question, fireBaseManager.addNVA((NVA) question));
-
-        else if(question != null)
+        if(question instanceof Question) {
+            showalert(activity, question, fireBaseManager.addQuestion(question));
+        }
+        else if(question != null) {
             showalert(activity, question, fireBaseManager.add(question));
+        }
 
-        else
-            Toast.makeText(activity.getApplicationContext(),"trying to add null object",Toast.LENGTH_LONG).show();
-
-
+        else{
+            Toast.makeText(activity.getApplicationContext(), "trying to add null object", Toast.LENGTH_LONG).show();
+        }
 
 
 
@@ -101,3 +115,4 @@ public class AddToFirebase {
 
 
 }
+

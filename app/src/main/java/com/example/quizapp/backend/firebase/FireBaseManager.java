@@ -1,6 +1,9 @@
 package com.example.quizapp.backend.firebase;
 
 import android.app.ActivityManager;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.os.AsyncTask;
 
 import com.example.quizapp.backend.Question.IVA;
 import com.example.quizapp.backend.Question.NVA;
@@ -10,6 +13,8 @@ import com.example.quizapp.backend.Question.SWA;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.net.URL;
 
 public class FireBaseManager {
     private DatabaseReference databaseReference;
@@ -24,33 +29,33 @@ public class FireBaseManager {
 
     public Task<Void> addQuestion(Question question){
         FirebaseDatabase db=FirebaseDatabase.getInstance();
-        databaseReference=db.getReference(Question.class.getSimpleName());
+        databaseReference=db.getReference(question.getSubject()+"-"+question.getType());
         return databaseReference.push().setValue(question);
     }
-
-public Task<Void> addIVA(IVA question){
-        FirebaseDatabase db=FirebaseDatabase.getInstance();
-        databaseReference=db.getReference(IVA.class.getSimpleName());
-        return databaseReference.push().setValue(question);
-    }
-
-    public Task<Void> addSMCQ4(SMCQ4 question){
-        FirebaseDatabase db=FirebaseDatabase.getInstance();
-        databaseReference=db.getReference(SMCQ4.class.getSimpleName());
-        return databaseReference.push().setValue(question);
-    }
-
-    public Task<Void> addSWA(SWA question){
-        FirebaseDatabase db=FirebaseDatabase.getInstance();
-        databaseReference=db.getReference(SWA.class.getSimpleName());
-        return databaseReference.push().setValue(question);
-    }
-
-    public Task<Void> addNVA(NVA question){
-        FirebaseDatabase db=FirebaseDatabase.getInstance();
-        databaseReference=db.getReference(NVA.class.getSimpleName());
-        return databaseReference.push().setValue(question);
-    }
+//
+//    public Task<Void> addIVA(IVA question){
+//        FirebaseDatabase db=FirebaseDatabase.getInstance();
+//        databaseReference=db.getReference(IVA.class.getSimpleName());
+//        return databaseReference.push().setValue(question);
+//    }
+//
+//    public Task<Void> addSMCQ4(SMCQ4 question){
+//        FirebaseDatabase db=FirebaseDatabase.getInstance();
+//        databaseReference=db.getReference(SMCQ4.class.getSimpleName());
+//        return databaseReference.push().setValue(question);
+//    }
+//
+//    public Task<Void> addSWA(SWA question){
+//        FirebaseDatabase db=FirebaseDatabase.getInstance();
+//        databaseReference=db.getReference(SWA.class.getSimpleName());
+//        return databaseReference.push().setValue(question);
+//    }
+//
+//    public Task<Void> addNVA(NVA question){
+//        FirebaseDatabase db=FirebaseDatabase.getInstance();
+//        databaseReference=db.getReference(NVA.class.getSimpleName());
+//        return databaseReference.push().setValue(question);
+//    }
 
 
 }

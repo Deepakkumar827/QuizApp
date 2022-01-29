@@ -46,7 +46,7 @@ public class QuizManager extends AppCompatActivity {
 
         ArrayAdapter<String> adapter1= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, DATA.subject);
         subject.setAdapter(adapter1);
-        subject.setSelection(adapter1.getPosition("DSA"));
+        subject.setSelection(adapter1.getPosition("java"));
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, DATA.test_type);
         test_type.setAdapter(adapter2);
@@ -67,7 +67,6 @@ public class QuizManager extends AppCompatActivity {
 //            subject.setSelection(adapter1.getPosition(bundle.get("subject").toString()));
 //
 //        }
-        subject.setSelection(adapter1.getPosition("java"));
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
