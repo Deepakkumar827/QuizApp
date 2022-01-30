@@ -41,24 +41,6 @@ public class AddToFirebase {
         FireBaseManager fireBaseManager=new FireBaseManager();
 
 
-//        if(question instanceof SMCQ4)
-//            showalert(activity, question, fireBaseManager.addSMCQ4((SMCQ4) question));
-//
-//        else if(question instanceof IVA)
-//            showalert(activity, question, fireBaseManager.addIVA((IVA) question));
-//
-//
-//        else if(question instanceof SWA)
-//            showalert(activity, question, fireBaseManager.addSWA((SWA) question));
-//
-//        else if(question instanceof NVA)
-//            showalert(activity, question, fireBaseManager.addNVA((NVA) question));
-//
-//        else if(question != null)
-//            showalert(activity, question, fireBaseManager.add(question));
-//
-//        else
-//            Toast.makeText(activity.getApplicationContext(),"trying to add null object",Toast.LENGTH_LONG).show();
 
         if(question instanceof Question) {
             showalert(activity, question, fireBaseManager.addQuestion(question));

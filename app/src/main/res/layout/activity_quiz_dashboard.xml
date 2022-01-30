@@ -16,57 +16,160 @@
         android:background="@color/lightgreen">
 
 
-        <ImageView
+        <!--<ImageView
             android:id="@+id/imageView"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
             android:layout_marginStart="20dp"
+            android:layout_centerVertical="true"
             android:layout_marginTop="0dp"
-            tools:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+            tools:srcCompat="@drawable/ic_baseline_arrow_back_24" />-->
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/question_unsolved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="1dp"
+            android:layout_toLeftOf="@+id/slash1"
+            android:text="00"
+            android:textColor="@color/lightred"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/slash1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="1dp"
+            android:layout_toLeftOf="@+id/question_total"
+            android:text="/"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@+id/question_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/question_correct"
+            android:text="00"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@+id/question_correct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="1dp"
+            android:layout_toLeftOf="@+id/slash"
+            android:text="00"
+            android:textColor="@color/green_color"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/slash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="1dp"
+            android:layout_toLeftOf="@+id/question_wrong"
+            android:text="/"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@+id/question_wrong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="1dp"
+            android:layout_toLeftOf="@+id/slash3"
+            android:text="00"
+            android:textColor="@color/red_color"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/slash3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="1dp"
+            android:layout_toLeftOf="@+id/question_total_solved"
+            android:text="/"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@+id/question_total_solved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/timer"
+            android:text="00"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/textView1"
+            android:text="00:00:00"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:text="Stop" />
+            android:text="Stop"
+            android:textSize="16sp" />
     </RelativeLayout>
-<!--
 
-    android:progress="10"
--->
-    <ProgressBar
-        android:id="@+id/progress_bar_id"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:progress="5"
+    <!--
+        <ProgressBar
+           android:id="@+id/progress_bar_id"
+           style="?android:attr/progressBarStyleHorizontal"
+           android:layout_width="match_parent"
+           android:layout_height="20dp"
+           android:progress="5"
 
-        android:progressBackgroundTint="@color/lightred"
-        android:max="60"
-        android:progressDrawable="@drawable/code_for_progressbar"/>
-
-
+           android:progressBackgroundTint="@color/lightred"
+           android:max="60"
+           android:progressDrawable="@drawable/code_for_progressbar"/>
+   -->
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="0dp">
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/fragement_question"
-            android:orientation="vertical"
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/fragement_question"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
-
-
 
 
     </LinearLayout>
@@ -76,8 +179,6 @@
         android:layout_height="60dp"
 
         android:gravity="center">
-
-
 
 
         <Button
@@ -111,282 +212,234 @@
 </LinearLayout>
 
 
+    <!--
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-
-    <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-
-android:layout_height="match_parent"
-android:orientation="vertical"
-tools:context=".ui.user.QuizDashboard">
-
-&lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;
-
-<RelativeLayout
+        <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="40dp"
-    android:background="@color/lightgreen">
 
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.user.QuizDashboard">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="40dp"
+    &lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="0dp"
-        tools:srcCompat="@drawable/ic_baseline_arrow_back_24" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="10dp"
-        android:text="Stop" />
-</RelativeLayout>
-&lt;!&ndash;
-
-    android:progress="10"
-&ndash;&gt;
+        android:background="@color/lightgreen">
 
 
-<ProgressBar
-    android:id="@+id/progress_bar_id"
-    style="?android:attr/progressBarStyleHorizontal"
-    android:layout_width="match_parent"
-    android:layout_height="20dp"
-    android:progress="60"
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="0dp"
+            tools:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
-    android:progressBackgroundTint="@color/lightred"
-    android:max="60"
-    android:progressDrawable="@drawable/code_for_progressbar"/>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="Stop" />
+    </RelativeLayout>
+    &lt;!&ndash;
 
-
-<androidx.cardview.widget.CardView
-    android:id="@+id/card_question"
-    android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginBottom="10dp"
-    android:backgroundTint="@color/lightred"
-    app:cardCornerRadius="20dp">
-    <TextView
-        android:id="@+id/text_question"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="@color/white"
-        android:text="textview"/>
+        android:progress="10"
+    &ndash;&gt;
 
 
+    <ProgressBar
+        android:id="@+id/progress_bar_id"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:progress="60"
 
-</androidx.cardview.widget.CardView>
-
-
-<androidx.cardview.widget.CardView
-    android:id="@+id/card_opt1"
-
-    android:layout_width="match_parent"
-    android:layout_height="40dp"
-
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginBottom="10dp"
-    android:backgroundTint="@color/lightyellow"
-    app:cardCornerRadius="10dp">
-    <TextView
-        android:id="@+id/text_opt1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="@color/white"
-        android:text="textview"/>
+        android:progressBackgroundTint="@color/lightred"
+        android:max="60"
+        android:progressDrawable="@drawable/code_for_progressbar"/>
 
 
-
-</androidx.cardview.widget.CardView>
-
-
-<androidx.cardview.widget.CardView
-    android:id="@+id/card_opt2"
-
-    android:layout_width="match_parent"
-    android:layout_height="40dp"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginBottom="10dp"
-    android:backgroundTint="@color/lightyellow"
-    app:cardCornerRadius="10dp">
-    <TextView
-        android:id="@+id/text_opt2"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="@color/white"
-        android:text="textview"/>
-
-
-
-</androidx.cardview.widget.CardView>
-
-
-<androidx.cardview.widget.CardView
-    android:id="@+id/card_opt3"
-
-    android:layout_width="match_parent"
-    android:layout_height="40dp"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginBottom="10dp"
-    android:backgroundTint="@color/lightyellow"
-    app:cardCornerRadius="10dp">
-    <TextView
-        android:id="@+id/text_opt3"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="@color/white"
-        android:text="textview"/>
-
-
-
-</androidx.cardview.widget.CardView>
-
-
-<androidx.cardview.widget.CardView
-    android:id="@+id/card_opt4"
-
-    android:layout_width="match_parent"
-    android:layout_height="40dp"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginBottom="10dp"
-    android:backgroundTint="@color/lightyellow"
-    app:cardCornerRadius="10dp">
-    <TextView
-        android:id="@+id/text_opt4"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="@color/white"
-        android:text="textview"/>
-
-
-
-</androidx.cardview.widget.CardView>
-
-
-<androidx.appcompat.widget.LinearLayoutCompat
-    android:layout_width="match_parent"
-    android:layout_marginTop="150dp"
-    android:gravity="center"
-
-    android:layout_height="60dp">
-
-
-
-
-
-    <Button
-        android:id="@+id/btn_prev"
-        android:layout_weight="1"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_question"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="10dp"
-        style="@style/button_small_rounded"
-        android:text="back" />
-
-    <Button
-        android:id="@+id/btn_middle"
-        android:layout_weight="1"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        style="@style/button_small_rounded"
-        android:text="optional" />
-
-    <Button
-        android:id="@+id/btn_next"
-        android:layout_weight="1"
         android:layout_marginRight="20dp"
-        android:layout_marginLeft="10dp"
-        style="@style/button_small_rounded"
-        android:text="next" />
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/lightred"
+        app:cardCornerRadius="20dp">
+        <TextView
+            android:id="@+id/text_question"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:text="textview"/>
 
 
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_opt1"
+
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/lightyellow"
+        app:cardCornerRadius="10dp">
+        <TextView
+            android:id="@+id/text_opt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:text="textview"/>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_opt2"
+
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/lightyellow"
+        app:cardCornerRadius="10dp">
+        <TextView
+            android:id="@+id/text_opt2"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:text="textview"/>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_opt3"
+
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/lightyellow"
+        app:cardCornerRadius="10dp">
+        <TextView
+            android:id="@+id/text_opt3"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:text="textview"/>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_opt4"
+
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/lightyellow"
+        app:cardCornerRadius="10dp">
+        <TextView
+            android:id="@+id/text_opt4"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:text="textview"/>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_marginTop="150dp"
+        android:gravity="center"
+
+        android:layout_height="60dp">
+
+
+
+
+
+        <Button
+            android:id="@+id/btn_prev"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            style="@style/button_small_rounded"
+            android:text="back" />
+
+        <Button
+            android:id="@+id/btn_middle"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            style="@style/button_small_rounded"
+            android:text="optional" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_weight="1"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="10dp"
+            style="@style/button_small_rounded"
+            android:text="next" />
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
 
 
 
 
-</LinearLayout>
+    </LinearLayout>
 
--->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    -->
 
 
     <!--
