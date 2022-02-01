@@ -7,7 +7,7 @@ package com.example.quizapp.backend.Question;
 import java.io.Serializable;
 
 public class IVA extends Question implements Serializable {
-    static final String type="IVA";  ////may be final/static
+    String type="IVA";  ////may be final/static
     String message="currently unavailable";
     String subject;
     String creator;

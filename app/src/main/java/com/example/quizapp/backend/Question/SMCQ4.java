@@ -6,7 +6,7 @@ package com.example.quizapp.backend.Question;
 import java.io.Serializable;
 
 public class SMCQ4 extends Question implements Serializable {
-    static final String type="SMCQ4";  ////may be final/static
+    String type="SMCQ4";  ////may be final/static
     String message="currently unavailable";
     String subject;
     String creator;

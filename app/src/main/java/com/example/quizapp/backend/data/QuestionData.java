@@ -2,6 +2,7 @@ package com.example.quizapp.backend.data;
 
 import com.example.quizapp.backend.Question.Question;
 import com.example.quizapp.backend.Question.SMCQ4;
+import com.example.quizapp.backend.firebase.FireBaseManager;
 
 import java.util.ArrayList;
 
@@ -9,6 +10,7 @@ public class QuestionData {
     public static ArrayList<Question> mAD_SMCQ=new ArrayList<>();
     public static void setAll(){
        QuestionData.setmAD_SMCQ();
+
 
     }
     public static void setmAD_SMCQ(){

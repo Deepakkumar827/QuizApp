@@ -1,6 +1,7 @@
 package com.example.quizapp.ui.user;
 
 import android.app.Dialog;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -30,6 +31,8 @@ import android.view.ViewGroup;
 
 import com.example.quizapp.R;
 
+import java.util.ArrayList;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link IVAuserFragment#newInstance} factory method to
@@ -38,6 +41,9 @@ import com.example.quizapp.R;
 public class SMCQ4userFragment extends Fragment {
     CardView card_question, card_opt1, card_opt2, card_opt3, card_opt4;
     TextView text_question, text_opt1, text_opt2, text_opt3, text_opt4;
+    int index=0;
+    ArrayList<String> answer_given;
+    int total_question, question_unsolved, question_solved, question_wrong, question_correct;
 
     Question current_question;
     // TODO: Rename parameter arguments, choose names that match
@@ -95,13 +101,6 @@ public class SMCQ4userFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        setAll();
-
-
-
-    }
-
-    private void setAll() {
         card_question=getView().findViewById(R.id.card_question);
         card_opt1=getView().findViewById(R.id.card_opt1);
         card_opt2=getView().findViewById(R.id.card_opt2);
@@ -122,36 +121,79 @@ public class SMCQ4userFragment extends Fragment {
         text_opt3.setText(question.getChoice3());
         text_opt4.setText(question.getChoice4());
 
+
+        index=((QuizDashboard)getActivity()).index;
+        answer_given=((QuizDashboard)getActivity()).answer_given;
+        if(answer_given.get(index)==""){
+            setListener();
+        }
+        else{
+            if(Integer.parseInt(answer_given.get(index))==((SMCQ4)current_question).getAnswer()){
+                setCardColor(((SMCQ4)current_question).getAnswer(), Color.GREEN);
+            }
+            else{
+                setCardColor(Integer.parseInt(answer_given.get(index)), Color.RED);
+                setCardColor(((SMCQ4)current_question).getAnswer(), Color.GREEN);
+
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    void setListener(){
+        SMCQ4 question=(SMCQ4) current_question;
+
         card_opt1.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 if(question.getAnswer()==1){
-                    card_opt1.setCardBackgroundColor(getResources().getColor(R.color.green_color));
-                }
-                else {
-                    card_opt1.setCardBackgroundColor(getResources().getColor(R.color.red_color));
+                    setCardColor(1,Color.GREEN);
+                    update_top_bar(1);
 
                 }
-                card_opt1.setOnClickListener(null);
-                card_opt2.setOnClickListener(null);
-                card_opt3.setOnClickListener(null);
-                card_opt4.setOnClickListener(null);
+                else {
+                    setCardColor(1,Color.RED);
+                    setCardColor(question.getAnswer(),Color.GREEN);
+                    update_top_bar(-1);
+
+                }
+
+                answer_given.set(index, Integer.toString(1));
+                disableAllButton();
+
             }
         });
         card_opt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if(question.getAnswer()==2){
-                    card_opt2.setCardBackgroundColor(getResources().getColor(R.color.green_color));
-                }
-                else {
-                    card_opt2.setCardBackgroundColor(getResources().getColor(R.color.red_color));
+                    setCardColor(2,Color.GREEN);
+                    update_top_bar(1);
 
                 }
-                card_opt1.setOnClickListener(null);
-                card_opt2.setOnClickListener(null);
-                card_opt3.setOnClickListener(null);
-                card_opt4.setOnClickListener(null);
+                else {
+                    setCardColor(2,Color.RED);
+                    setCardColor(question.getAnswer(),Color.GREEN);
+                    update_top_bar(-1);
+
+
+                }
+                answer_given.set(index, Integer.toString(2));
+
+                disableAllButton();
             }
         });
 
@@ -159,17 +201,21 @@ public class SMCQ4userFragment extends Fragment {
         card_opt3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(question.getAnswer()==1){
-                    card_opt3.setCardBackgroundColor(getResources().getColor(R.color.green_color));
-                }
-                else {
-                    card_opt3.setCardBackgroundColor(getResources().getColor(R.color.red_color));
+                if(question.getAnswer()==3){
+                    setCardColor(3,Color.GREEN);
+                    update_top_bar(1);
 
                 }
-                card_opt1.setOnClickListener(null);
-                card_opt2.setOnClickListener(null);
-                card_opt3.setOnClickListener(null);
-                card_opt4.setOnClickListener(null);
+                else {
+                    setCardColor(3,Color.RED);
+                    setCardColor(question.getAnswer(),Color.GREEN);
+
+                    update_top_bar(-1);
+
+                }
+                answer_given.set(index, Integer.toString(3));
+
+                disableAllButton();
             }
         });
 
@@ -178,25 +224,85 @@ public class SMCQ4userFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if(question.getAnswer()==4){
-                    card_opt4.setCardBackgroundColor(getResources().getColor(R.color.green_color));
+                    setCardColor(4,Color.GREEN);
+                    update_top_bar(1);
+
                 }
                 else {
-                    card_opt4.setCardBackgroundColor(getResources().getColor(R.color.red_color));
+                    setCardColor(4,Color.RED);
+                    setCardColor(question.getAnswer(),Color.GREEN);
+                    update_top_bar(-1);
+
 
                 }
-                card_opt1.setOnClickListener(null);
-                card_opt2.setOnClickListener(null);
-                card_opt3.setOnClickListener(null);
-                card_opt4.setOnClickListener(null);
+                answer_given.set(index, Integer.toString(4));
+
+                disableAllButton();
             }
         });
+    }
 
 
+    void setCardColor(int b, int color){
+        switch (b){
+            case 1:
+                card_opt1.getBackground().setTint(color);
 
+                break;
+            case 2:
+                card_opt2.getBackground().setTint(color);
 
+                break;
+            case 3:
+                card_opt3.getBackground().setTint(color);
+
+                break;
+            case 4:
+                card_opt4.getBackground().setTint(color);
+
+                break;
+            default:
+                ///
+        }
 
 
     }
+
+
+    void disableAllButton(){
+        card_opt1.setOnClickListener(null);
+        card_opt2.setOnClickListener(null);
+        card_opt3.setOnClickListener(null);
+        card_opt4.setOnClickListener(null);
+    }
+
+
+
+    void update_top_bar(int ans){
+
+
+
+        if(ans<0){
+            ((QuizDashboard)getActivity()).question_solved++;
+            ((QuizDashboard)getActivity()).question_unsolved--;
+            ((QuizDashboard)getActivity()).question_wrong++;
+
+
+        }
+        else if(ans>0){
+            ((QuizDashboard)getActivity()).question_solved++;
+            ((QuizDashboard)getActivity()).question_unsolved--;
+            ((QuizDashboard)getActivity()).question_correct++;
+
+        }
+        else{
+
+        }
+        ((QuizDashboard)getActivity()).updateTopBar();
+
+
+    }
+
 
 
 }

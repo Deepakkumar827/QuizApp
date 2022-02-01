@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Locale;
 
 public class SWA extends Question implements Serializable {
-    static final String type="SWA";  ////may be final/static
+    String type="SWA";  ////may be final/static
 
     String message="currently unavailable";
     String subject;

@@ -9,16 +9,12 @@ package com.example.quizapp.backend.Question;
 import java.io.Serializable;
 
 public class MMCQ4 implements Serializable {
-    static final String type="IVA";  ////may be final/static
+    static final String type = "IVA";  ////may be final/static
     String subject;
 
-    static int mMCQ4idgenerator=0;
+    static int mMCQ4idgenerator = 0;
     int MMCQ4id;
     String creator;
 
 
-
-    public String getType() {
-        return IVA.type;
-    }
 }

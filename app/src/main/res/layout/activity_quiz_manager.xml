@@ -108,7 +108,7 @@
         android:id="@+id/textView1"
         android:textSize="16sp"
         android:layout_width="match_parent"
-        android:background="@color/lightgreen"
+        android:background="@color/lightblue"
 
         android:layout_height="20dp"
         android:text="mode of test" />
@@ -117,7 +117,7 @@
         android:id="@+id/test_mode"
         style="@style/edittext_extralarge"
 
-        android:background="@color/lightgreen"
+        android:background="@color/lightblue"
 
         />
 

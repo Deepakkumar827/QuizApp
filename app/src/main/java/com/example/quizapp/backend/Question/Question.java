@@ -2,16 +2,25 @@ package com.example.quizapp.backend.Question;
 
 import java.io.Serializable;
 
-public  abstract class Question implements Serializable {
+public   class Question implements Serializable {
 
 
 
-    public abstract String getMessage();
-    public abstract String getType();
+    public   String getMessage(){
+        return null;
+    }
+    public   String getType(){
+        return null;
+    }
 
-    public abstract String getCreator();
+    public   String getCreator(){
+        return null;
+    }
 
-    public abstract String getSubject();
+    public   String getSubject(){
+
+        return null;
+    }
 
     public static Question createIVA(String creator,String subject, String question, int answer, String message){
         Question newquestion=new IVA(creator, subject, question, answer, message);
