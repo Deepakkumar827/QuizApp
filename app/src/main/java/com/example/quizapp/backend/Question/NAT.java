@@ -2,8 +2,8 @@ package com.example.quizapp.backend.Question;
 
 import java.io.Serializable;
 
-public class NVA extends Question implements Serializable {
-     String type="IVA";  ////may be final/static
+public class NAT extends Question implements Serializable {
+     String type="NAT";  ////may be final/static
     String message="currently unavailable";
 
     String subject;
@@ -11,7 +11,7 @@ public class NVA extends Question implements Serializable {
     String question;
     float answer;
 
-    protected NVA(String creator, String subject, String question, float answer, String message){
+    protected NAT(String creator, String subject, String question, float answer, String message){
         super();
         this.creator=creator;
         this.subject=subject;

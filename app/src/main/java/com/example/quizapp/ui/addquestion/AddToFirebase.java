@@ -1,29 +1,17 @@
 package com.example.quizapp.ui.addquestion;
 
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.os.AsyncTask;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
-import com.example.quizapp.R;
-import com.example.quizapp.backend.Question.IVA;
-import com.example.quizapp.backend.Question.NVA;
 import com.example.quizapp.backend.Question.Question;
-import com.example.quizapp.backend.Question.SMCQ4;
-import com.example.quizapp.backend.Question.SWA;
 import com.example.quizapp.backend.firebase.FireBaseManager;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.FirebaseDatabase;
-
-import java.net.URL;
 
 public class AddToFirebase {
     static AlertDialog.Builder builder;

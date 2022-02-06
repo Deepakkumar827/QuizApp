@@ -29,7 +29,7 @@ public   class Question implements Serializable {
 
     public static Question createSMCQ4(String creator, String subject, String question, String firstchoice, String secondchoice, String thirdchoice, String fourthchoice, int answer, String message){
 
-        Question newquestion=new SMCQ4(creator, subject, question,firstchoice, secondchoice, thirdchoice, firstchoice, answer, message);
+        Question newquestion=new MCQ(creator, subject, question,firstchoice, secondchoice, thirdchoice, firstchoice, answer, message);
         return newquestion;
     }
 
@@ -39,7 +39,7 @@ public   class Question implements Serializable {
     }
 
     public static Question createNVA(String creator,String subject, String question, float answer, String message){
-        Question newquestion=new NVA(creator, subject, question, answer, message);
+        Question newquestion=new NAT(creator, subject, question, answer, message);
         return newquestion;
     }
 

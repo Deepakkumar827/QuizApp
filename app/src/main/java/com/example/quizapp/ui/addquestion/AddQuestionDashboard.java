@@ -66,7 +66,7 @@ public class AddQuestionDashboard extends AppCompatActivity {
                         transaction1.commit();
 
                         break;
-                    case "SMCQ4":
+                    case "MCQ":
                         SMCQ4AddQuestionFragment fragment2=new SMCQ4AddQuestionFragment();
                         FragmentTransaction transaction2=getSupportFragmentManager().beginTransaction();
                         transaction2.replace(R.id.add_question_dashboard_fragment, fragment2);
@@ -80,14 +80,14 @@ public class AddQuestionDashboard extends AppCompatActivity {
                         transaction3.commit();
 
                         break;
-                    case "NVA":
+                    case "NAT":
                         NVAAddQuestionFragment fragment4=new NVAAddQuestionFragment();
                         FragmentTransaction transaction4=getSupportFragmentManager().beginTransaction();
                         transaction4.replace(R.id.add_question_dashboard_fragment, fragment4);
                         transaction4.commit();
 
                         break;
-                    case "MMCQ4":
+                    case "MSQ":
                         MMCQ4AddQuestionFragment fragment5=new MMCQ4AddQuestionFragment();
                         FragmentTransaction transaction5=getSupportFragmentManager().beginTransaction();
                         transaction5.replace(R.id.add_question_dashboard_fragment, fragment5);
@@ -121,7 +121,7 @@ public class AddQuestionDashboard extends AppCompatActivity {
                         transaction1.commit();
 
                         break;
-                    case "SMCQ4":
+                    case "MCQ":
                         SMCQ4AddQuestionFragment fragment2=new SMCQ4AddQuestionFragment();
                         FragmentTransaction transaction2=getSupportFragmentManager().beginTransaction();
                         transaction2.replace(R.id.add_question_dashboard_fragment, fragment2);
@@ -135,14 +135,14 @@ public class AddQuestionDashboard extends AppCompatActivity {
                         transaction3.commit();
 
                         break;
-                    case "NVA":
+                    case "NAT":
                         NVAAddQuestionFragment fragment4=new NVAAddQuestionFragment();
                         FragmentTransaction transaction4=getSupportFragmentManager().beginTransaction();
                         transaction4.replace(R.id.add_question_dashboard_fragment, fragment4);
                         transaction4.commit();
 
                         break;
-                    case "MMCQ4":
+                    case "MSQ":
                         MMCQ4AddQuestionFragment fragment5=new MMCQ4AddQuestionFragment();
                         FragmentTransaction transaction5=getSupportFragmentManager().beginTransaction();
                         transaction5.replace(R.id.add_question_dashboard_fragment, fragment5);

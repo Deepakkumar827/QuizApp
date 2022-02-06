@@ -1,12 +1,12 @@
 package com.example.quizapp.backend.Question;
 
 
-///MMCQ4- multiple choice quesion with single answer with four choice
+///MCQ- multiple choice quesion with single answer with four choice
 
 import java.io.Serializable;
 
-public class SMCQ4 extends Question implements Serializable {
-    String type="SMCQ4";  ////may be final/static
+public class MCQ extends Question implements Serializable {
+    String type="MCQ";  ////may be final/static
     String message="currently unavailable";
     String subject;
     String creator;
@@ -17,7 +17,7 @@ public class SMCQ4 extends Question implements Serializable {
     String choice4;
     int answer;
 
-    protected SMCQ4(String creator, String subject, String question, String choice1, String choice2, String choice3, String choice4, int answer, String message){
+    protected MCQ(String creator, String subject, String question, String choice1, String choice2, String choice3, String choice4, int answer, String message){
         super();
         this.creator=creator;
         this.subject=subject;

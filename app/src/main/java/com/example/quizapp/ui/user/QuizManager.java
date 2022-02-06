@@ -1,11 +1,9 @@
 package com.example.quizapp.ui.user;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -15,20 +13,14 @@ import android.widget.Toast;
 
 import com.example.quizapp.R;
 import com.example.quizapp.backend.Question.Question;
-import com.example.quizapp.backend.Question.SMCQ4;
 import com.example.quizapp.backend.data.DATA;
 import com.example.quizapp.backend.data.QuestionData;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Locale;
 
 public class QuizManager extends AppCompatActivity {
     Button exit, ok;
@@ -104,7 +96,7 @@ public class QuizManager extends AppCompatActivity {
 
 
 
-//                    databaseReference= FirebaseDatabase.getInstance().getReference().child("MAD-SMCQ4");
+//                    databaseReference= FirebaseDatabase.getInstance().getReference().child("MAD-MCQ");
 ////                    databaseReference= FirebaseDatabase.getInstance().getReference(folder);
 //                    databaseReference.addValueEventListener(new ValueEventListener() {
 //                        @Override

@@ -19,11 +19,10 @@ import android.widget.Toast;
 
 import com.example.quizapp.R;
 import com.example.quizapp.backend.Question.Question;
-import com.example.quizapp.backend.Question.SMCQ4;
+import com.example.quizapp.backend.Question.MCQ;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -36,7 +35,7 @@ public class QuizDashboard extends AppCompatActivity {
     ProgressBar progressBar;
     CountDownTimer countDownTimer;
     int timervalue = 0;
-    SMCQ4 current;
+    MCQ current;
     Button btn_prev, btn_middle, btn_next;
     int total_question, question_unsolved, question_solved, question_wrong, question_correct;
     TextView timer, total_question_txt, question_unsolved_txt, question_solved_txt, question_wrong_txt, question_correct_txt;
@@ -155,7 +154,7 @@ public class QuizDashboard extends AppCompatActivity {
             return;
         } else {
             switch (questionList.get(i).getType()) {
-                case "SMCQ4":
+                case "MCQ":
                     SMCQ4userFragment fragment1 = new SMCQ4userFragment(questionList.get(i));
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
@@ -168,7 +167,7 @@ public class QuizDashboard extends AppCompatActivity {
                     break;
                 case "SWA":
                     break;
-                case "NVA":
+                case "NAT":
                     break;
                 default:
                     break;
@@ -254,7 +253,7 @@ public class QuizDashboard extends AppCompatActivity {
     void actionOnCorrect(){
         correctCount++;
         index++;
-        current=(SMCQ4) questionList.get(index);
+        current=(MCQ) questionList.get(index);
 //        setText(current);
 
     }
@@ -262,7 +261,7 @@ public class QuizDashboard extends AppCompatActivity {
     void actionOnWrong(){
         wrongCount++;
         index++;
-        current=(SMCQ4) questionList.get(index);
+        current=(MCQ) questionList.get(index);
 //        setText(c/urrent);
 
     }

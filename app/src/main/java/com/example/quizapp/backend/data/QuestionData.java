@@ -1,8 +1,6 @@
 package com.example.quizapp.backend.data;
 
 import com.example.quizapp.backend.Question.Question;
-import com.example.quizapp.backend.Question.SMCQ4;
-import com.example.quizapp.backend.firebase.FireBaseManager;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,5 @@
 package com.example.quizapp.ui.user;
 
-import android.app.Dialog;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -9,27 +8,15 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.quizapp.R;
+import com.example.quizapp.backend.Question.MCQ;
 import com.example.quizapp.backend.Question.Question;
-import com.example.quizapp.backend.Question.SMCQ4;
 
-
-import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import com.example.quizapp.R;
 
 import java.util.ArrayList;
 
@@ -114,7 +101,7 @@ public class SMCQ4userFragment extends Fragment {
         text_opt4=getView().findViewById(R.id.text_opt4);
 
 
-        SMCQ4 question=(SMCQ4) current_question;
+        MCQ question=(MCQ) current_question;
         text_question.setText(question.getQuestion());
         text_opt1.setText(question.getChoice1());
         text_opt2.setText(question.getChoice2());
@@ -128,12 +115,12 @@ public class SMCQ4userFragment extends Fragment {
             setListener();
         }
         else{
-            if(Integer.parseInt(answer_given.get(index))==((SMCQ4)current_question).getAnswer()){
-                setCardColor(((SMCQ4)current_question).getAnswer(), Color.GREEN);
+            if(Integer.parseInt(answer_given.get(index))==((MCQ)current_question).getAnswer()){
+                setCardColor(((MCQ)current_question).getAnswer(), Color.GREEN);
             }
             else{
                 setCardColor(Integer.parseInt(answer_given.get(index)), Color.RED);
-                setCardColor(((SMCQ4)current_question).getAnswer(), Color.GREEN);
+                setCardColor(((MCQ)current_question).getAnswer(), Color.GREEN);
 
             }
         }
@@ -152,7 +139,7 @@ public class SMCQ4userFragment extends Fragment {
     }
 
     void setListener(){
-        SMCQ4 question=(SMCQ4) current_question;
+        MCQ question=(MCQ) current_question;
 
         card_opt1.setOnClickListener(new View.OnClickListener() {
 

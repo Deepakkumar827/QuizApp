@@ -1,30 +1,11 @@
 package com.example.quizapp.backend.firebase;
 
-import android.app.ActivityManager;
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.Intent;
-import android.os.AsyncTask;
-import android.widget.ArrayAdapter;
-
-import androidx.annotation.NonNull;
-
-import com.example.quizapp.backend.Question.IVA;
-import com.example.quizapp.backend.Question.NVA;
 import com.example.quizapp.backend.Question.Question;
-import com.example.quizapp.backend.Question.SMCQ4;
-import com.example.quizapp.backend.Question.SWA;
-import com.example.quizapp.ui.user.QuizManager;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class FireBaseManager {
