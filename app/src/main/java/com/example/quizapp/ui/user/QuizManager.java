@@ -35,7 +35,7 @@ public class QuizManager extends AppCompatActivity {
     EditText no_of_question;
     Spinner test_mode, test_type, subject;
     List<Question> questionList;
-    public static ArrayList<Question> question_array_list=new ArrayList<>();
+    public  ArrayList<Question> array=new ArrayList<>();
     DatabaseReference databaseReference;
 
     @Override
@@ -96,7 +96,9 @@ public class QuizManager extends AppCompatActivity {
                     String folder="test";
 
 
-//                    questionList=question_array_list;
+//                    questionList=question_ar/ray_list;
+//                    array.add(Question.createSMCQ4("Deepak","MAD", "Android is -", "an operating system", "a web browser", "a web server", "None of the above", 1, "none"));
+
 //                    QuestionData.setmAD_SMCQ();
                     questionList=QuestionData.mAD_SMCQ;
 
@@ -108,11 +110,13 @@ public class QuizManager extends AppCompatActivity {
 //                        @Override
 //                        public void onDataChange(@NonNull DataSnapshot snapshot) {
 //
-//                             for(DataSnapshot dataSnapshot: snapshot.getChildren()){
-//                                questionList.add((Question) dataSnapshot.getValue(Question.class));
-////                                Log.d("-----", Long.toString( dataSnapshot.getChildrenCount()));
+//                              for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+////                                  questionList.add((Question) dataSnapshot.getValue(Question.class));
+//                                  array.add( dataSnapshot.getValue(Question.class));
+////                                  Log.d("-----", (dataSnapshot.getValue(Question.class).getClass().toString()));
 //                            }
 //
+//                              questionList=array;
 //                            Collections.shuffle(questionList);
 //                            intent.putExtra("list", (Serializable) questionList);
 //                            finish();
