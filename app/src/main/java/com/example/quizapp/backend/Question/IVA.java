@@ -14,6 +14,8 @@ public class IVA extends Question implements Serializable {
     String question;
     int answer;
 
+
+
     protected IVA (String creator,String subject, String question, int answer, String message){
         super();
         this.creator=creator;

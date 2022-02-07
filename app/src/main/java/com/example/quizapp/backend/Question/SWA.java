@@ -16,6 +16,7 @@ public class SWA extends Question implements Serializable {
 
 
 
+    protected SWA(){}
 
 
     protected SWA(String creator, String subject, String question, String answer, String message) {

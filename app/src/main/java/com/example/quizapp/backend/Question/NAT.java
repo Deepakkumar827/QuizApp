@@ -11,6 +11,8 @@ public class NAT extends Question implements Serializable {
     String question;
     float answer;
 
+    protected NAT(){}
+
     protected NAT(String creator, String subject, String question, float answer, String message){
         super();
         this.creator=creator;

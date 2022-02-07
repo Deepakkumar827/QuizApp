@@ -9,6 +9,7 @@ import com.example.quizapp.backend.Question.Question;
 import com.example.quizapp.backend.data.QuestionData;
 import com.example.quizapp.backend.firebase.FireBaseManager;
 import com.example.quizapp.ui.addquestion.AddQuestionDashboard;
+import com.example.quizapp.ui.addquestion.AddToFirebase;
 import com.example.quizapp.ui.user.QuizManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        QuestionData.setmAD_SMCQ();
+
 
 
         BottomNavigationView navView = findViewById(R.id.nav_view);

@@ -1,9 +1,11 @@
 package com.example.quizapp.ui.user;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -12,10 +14,18 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.quizapp.R;
+import com.example.quizapp.backend.Question.IVA;
+import com.example.quizapp.backend.Question.MCQ;
+import com.example.quizapp.backend.Question.NAT;
 import com.example.quizapp.backend.Question.Question;
+import com.example.quizapp.backend.Question.SWA;
 import com.example.quizapp.backend.data.DATA;
 import com.example.quizapp.backend.data.QuestionData;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -27,7 +37,7 @@ public class QuizManager extends AppCompatActivity {
     EditText no_of_question;
     Spinner test_mode, test_type, subject;
     List<Question> questionList;
-    public  ArrayList<Question> array=new ArrayList<>();
+//    public ArrayList<Question> array = new ArrayList<>();
     DatabaseReference databaseReference;
 
     @Override
@@ -41,7 +51,8 @@ public class QuizManager extends AppCompatActivity {
         test_mode = findViewById(R.id.test_mode);
         test_type = findViewById(R.id.test_type);
 
-        no_of_question.setText("77");
+        no_of_question.setText("111111");
+        no_of_question.setEnabled(false);
 
         exit = findViewById(R.id.exit);
         ok = findViewById(R.id.submit);
@@ -53,7 +64,7 @@ public class QuizManager extends AppCompatActivity {
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, DATA.test_type);
         test_type.setAdapter(adapter2);
-        test_type.setSelection(adapter2.getPosition("only_SMCQ4"));
+        test_type.setSelection(adapter2.getPosition("MCQ"));
         test_type.setEnabled(false);
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, DATA.test_mode);
         test_mode.setAdapter(adapter3);
@@ -81,54 +92,72 @@ public class QuizManager extends AppCompatActivity {
                 if (no_of_question.getText().toString().trim().matches("") || Integer.parseInt(no_of_question.getText().toString().trim()) == 0) {
                     Toast.makeText(getApplicationContext(), "Please fill in all the required fields.", Toast.LENGTH_SHORT).show();
                 } else {
-                    String subject_txt= subject.getSelectedItem().toString().trim();
-                    String test_type_txt= test_type.getSelectedItem().toString().trim();
-                    String no_of_question_txt= no_of_question.getText().toString();
-
-                    String folder="test";
+                    String subject_txt = subject.getSelectedItem().toString().trim();
+                    String test_type_txt = test_type.getSelectedItem().toString().trim();
+                    String no_of_question_txt = no_of_question.getText().toString();
 
 
 //                    questionList=question_ar/ray_list;
-//                    array.add(Question.createSMCQ4("Deepak","MAD", "Android is -", "an operating system", "a web browser", "a web server", "None of the above", 1, "none"));
 
 //                    QuestionData.setmAD_SMCQ();
-                    questionList=QuestionData.mAD_SMCQ;
+                     questionList = new ArrayList<>();
 
 
+                    String folder = subject_txt+"-"+test_type_txt;
+                    databaseReference = FirebaseDatabase.getInstance().getReference().child(folder);
+//                    databaseReference= FirebaseDatabase.getInstance().getReference(folder);
+                    databaseReference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-//                    databaseReference= FirebaseDatabase.getInstance().getReference().child("MAD-MCQ");
-////                    databaseReference= FirebaseDatabase.getInstance().getReference(folder);
-//                    databaseReference.addValueEventListener(new ValueEventListener() {
-//                        @Override
-//                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-//                              for(DataSnapshot dataSnapshot: snapshot.getChildren()){
-////                                  questionList.add((Question) dataSnapshot.getValue(Question.class));
-//                                  array.add( dataSnapshot.getValue(Question.class));
-////                                  Log.d("-----", (dataSnapshot.getValue(Question.class).getClass().toString()));
-//                            }
-//
-//                              questionList=array;
-//                            Collections.shuffle(questionList);
-//                            intent.putExtra("list", (Serializable) questionList);
-//                            finish();
-//////
-//                            startActivity(intent);
-//                        }
-//
-//                        @Override
-//                        public void onCancelled(@NonNull DatabaseError error) {
-//
-//                        }
-//                    });
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                Log.w("asdf", "Tenemos el resultado de la query.");
+
+                                switch (dataSnapshot.child("type").getValue(String.class)){
+
+                                    case "MCQ":
+                                        questionList.add(dataSnapshot.getValue(MCQ.class));
+                                        break;
+                                    case "NAT":
+                                        questionList.add(dataSnapshot.getValue(NAT.class));
+                                        break;
+                                    case "SWA":
+
+                                        questionList.add(dataSnapshot.getValue(SWA.class));
+                                        break;
+                                    case "IVA":
+                                        questionList.add(dataSnapshot.getValue(IVA.class));
+
+                                        break;
 
 
-                    Collections.shuffle(questionList);
-                    intent.putExtra("list", (Serializable) questionList);
-                    finish();
+                                    default:
+                                        break;
+                                }
+//                                  Log.d("-----", (dataSnapshot.getValue(Question.class).getClass().toString()));
+                            }
+
+                            Collections.shuffle(questionList);
+                            intent.putExtra("list", (Serializable) questionList);
+                            finish();
 ////
-                    startActivity(intent);
+                            startActivity(intent);
+                        }
 
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+
+
+                    });
+
+
+//                    Collections.shuffle(questionList);
+//                    intent.putExtra("list", (Serializable) questionList);
+//                    finish();
+//////
+//                    startActivity(intent);
 
 
                 }

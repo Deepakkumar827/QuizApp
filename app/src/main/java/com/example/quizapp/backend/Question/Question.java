@@ -6,6 +6,9 @@ public   class Question implements Serializable {
 
 
 
+    protected Question(){};
+
+
     public   String getMessage(){
         return null;
     }
@@ -22,14 +25,15 @@ public   class Question implements Serializable {
         return null;
     }
 
+
     public static Question createIVA(String creator,String subject, String question, int answer, String message){
         Question newquestion=new IVA(creator, subject, question, answer, message);
         return newquestion;
     }
 
-    public static Question createSMCQ4(String creator, String subject, String question, String firstchoice, String secondchoice, String thirdchoice, String fourthchoice, int answer, String message){
+    public static Question createMCQ(String creator, String subject, String question, String firstchoice, String secondchoice, String thirdchoice, String fourthchoice, int answer, String message){
 
-        Question newquestion=new MCQ(creator, subject, question,firstchoice, secondchoice, thirdchoice, firstchoice, answer, message);
+        Question newquestion=new MCQ(creator, subject, question,firstchoice, secondchoice, thirdchoice, fourthchoice, answer, message);
         return newquestion;
     }
 

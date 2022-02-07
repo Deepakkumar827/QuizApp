@@ -17,6 +17,8 @@ public class MCQ extends Question implements Serializable {
     String choice4;
     int answer;
 
+    protected MCQ(){}
+
     protected MCQ(String creator, String subject, String question, String choice1, String choice2, String choice3, String choice4, int answer, String message){
         super();
         this.creator=creator;
