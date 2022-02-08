@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="@color/lightblue"
-    tools:context=".ui.addquestion.MMCQ4AddQuestionFragment">
+    tools:context=".ui.addquestion.MSQAddQuestionFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

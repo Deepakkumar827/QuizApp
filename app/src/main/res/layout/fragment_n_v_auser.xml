@@ -1,14 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.user.NVAuserFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_question"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/lightred"
+        app:cardCornerRadius="20dp">
+        <TextView
+            android:id="@+id/text_question"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:text="textview"/>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="50dp"
+
+        android:layout_height="80dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Enter answer"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+
+            android:textColorHint="@color/lightgreen"
+            app:hintTextColor="@color/lightgreen">
+            <EditText
+                android:id="@+id/user_answer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:textSize="25sp"
+
+                />
+
+
+
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/set_button"
+            style="@style/button_medium_rounded"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+
+
+
+            android:text="ANSWER" />
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+</LinearLayout>

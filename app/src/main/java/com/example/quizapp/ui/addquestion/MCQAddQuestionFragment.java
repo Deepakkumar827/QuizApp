@@ -18,15 +18,14 @@ import android.widget.Toast;
 
 import com.example.quizapp.R;
 import com.example.quizapp.backend.Question.Question;
-import com.example.quizapp.backend.data.QuestionData;
 import com.example.quizapp.backend.firebase.FireBaseManager;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SMCQ4AddQuestionFragment#newInstance} factory method to
+ * Use the {@link MCQAddQuestionFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SMCQ4AddQuestionFragment extends Fragment {
+public class MCQAddQuestionFragment extends Fragment {
 
     TextView creator;
     Button exit, submit;
@@ -45,7 +44,7 @@ public class SMCQ4AddQuestionFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public SMCQ4AddQuestionFragment() {
+    public MCQAddQuestionFragment() {
         // Required empty public constructor
     }
 
@@ -55,11 +54,11 @@ public class SMCQ4AddQuestionFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment SMCQ4AddQuestionFragment.
+     * @return A new instance of fragment MCQAddQuestionFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static SMCQ4AddQuestionFragment newInstance(String param1, String param2) {
-        SMCQ4AddQuestionFragment fragment = new SMCQ4AddQuestionFragment();
+    public static MCQAddQuestionFragment newInstance(String param1, String param2) {
+        MCQAddQuestionFragment fragment = new MCQAddQuestionFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -130,7 +129,7 @@ public class SMCQ4AddQuestionFragment extends Fragment {
                 else {
                     int check=0;
                     int  ans=Integer.parseInt(s_ans);
-                    Question question=Question.createMCQ(cr, sub, qs,opt1, opt2, opt3, opt4, ans, msg);
+                    Question question=Question.createMCQ(cr,"all","all",  sub, "prev", "chapter", qs,opt1, opt2, opt3, opt4, ans, msg);
                      AddToFirebase.add(getActivity(), question);
 
 //                    for(Question q: QuestionData.mAD_SMCQ){

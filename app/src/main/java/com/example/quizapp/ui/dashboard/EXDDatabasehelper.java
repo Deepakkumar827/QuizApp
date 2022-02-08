@@ -28,13 +28,13 @@ public class EXDDatabasehelper {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
-                    Log.w("asdf", "Tenemos el resultado de la query.");
+                    Log.w("asdf", "TESTING");
                     try {
                         Log.w("asdf", userSnapshot.toString());
 
 //                         Deserializing only name
                         String name = userSnapshot.child("choice3").getValue(String.class);
-                        Log.w("asdf", "String is here!!!" + name);
+                        Log.w("asdf", "W1" + name);
 
                        /* // Deserializing only phone
                         String phone = userSnapshot.child("born").getValue(String.class);
@@ -42,7 +42,7 @@ public class EXDDatabasehelper {
 */
                         // Deserializing into a TestData object
                         MCQ result =  userSnapshot.getValue(MCQ.class);
-                        Log.w("asdf", "Parse success!!!");
+                        Log.w("asdf", "W2");
 
 
 

@@ -119,7 +119,7 @@ public class SWAAddQuestionFragment extends Fragment {
                 }
 
                 else {
-                    Question question = Question.createSWA(cr, sub, qs, ans, msg);
+                    Question question = Question.createSWA(cr,"all","standard",sub, "prev", "all" , qs, ans, msg);
 
 
                     AddToFirebase.add(getActivity(), question);

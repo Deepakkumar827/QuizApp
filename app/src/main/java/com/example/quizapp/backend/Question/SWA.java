@@ -7,10 +7,14 @@ import java.util.Locale;
 
 public class SWA extends Question implements Serializable {
     String type="SWA";  ////may be final/static
+    String creator;
 
     String message="currently unavailable";
+    String board="all";
+    String standard="all";
     String subject;
-    String creator;
+    String prev="core";
+    String chapter="all";
     String question;
     String answer;
 
@@ -19,17 +23,17 @@ public class SWA extends Question implements Serializable {
     protected SWA(){}
 
 
-    protected SWA(String creator, String subject, String question, String answer, String message) {
-        super();
-        this.creator=creator;
-        this.subject=subject;
-        this.question=question;
-        this.answer=answer.toLowerCase(Locale.ROOT).trim();
-        this.subject=subject;
-        this.message=message;
-
+    public SWA(String creator, String board,  String standard, String subject, String prev, String chapter, String question, String answer, String message) {
+        this.creator = creator;
+        this.message = message;
+        this.board=board;
+        this.standard = standard;
+        this.subject = subject;
+        this.prev = prev;
+        this.chapter = chapter;
+        this.question = question;
+        this.answer = answer;
     }
-
 
     @Override
     public String getMessage() {
@@ -63,8 +67,23 @@ public class SWA extends Question implements Serializable {
     }
 
 
+    @Override
+    public String getStandard() {
+        return standard;
+    }
 
+    @Override
+    public String getPrev() {
+        return prev;
+    }
 
+    @Override
+    public String getChapter() {
+        return chapter;
+    }
 
-
+    @Override
+    public String getBoard() {
+        return board;
+    }
 }

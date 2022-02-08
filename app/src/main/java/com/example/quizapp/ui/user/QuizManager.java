@@ -64,8 +64,8 @@ public class QuizManager extends AppCompatActivity {
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, DATA.test_type);
         test_type.setAdapter(adapter2);
-        test_type.setSelection(adapter2.getPosition("MCQ"));
-        test_type.setEnabled(false);
+        test_type.setSelection(adapter2.getPosition("SWA"));
+//        test_type.setEnabled(false);
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, DATA.test_mode);
         test_mode.setAdapter(adapter3);
         test_mode.setSelection(adapter3.getPosition("Single_Mode"));
@@ -103,7 +103,8 @@ public class QuizManager extends AppCompatActivity {
                      questionList = new ArrayList<>();
 
 
-                    String folder = subject_txt+"-"+test_type_txt;
+//                    String folder = subject_txt+"-"+test_type_txt;
+                    String folder = "MAD-IVA";
                     databaseReference = FirebaseDatabase.getInstance().getReference().child(folder);
 //                    databaseReference= FirebaseDatabase.getInstance().getReference(folder);
                     databaseReference.addValueEventListener(new ValueEventListener() {
@@ -111,7 +112,7 @@ public class QuizManager extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                             for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                                Log.w("asdf", "Tenemos el resultado de la query.");
+                                Log.w("asdf", "working");
 
                                 switch (dataSnapshot.child("type").getValue(String.class)){
 
@@ -140,7 +141,6 @@ public class QuizManager extends AppCompatActivity {
                             Collections.shuffle(questionList);
                             intent.putExtra("list", (Serializable) questionList);
                             finish();
-////
                             startActivity(intent);
                         }
 
@@ -153,11 +153,7 @@ public class QuizManager extends AppCompatActivity {
                     });
 
 
-//                    Collections.shuffle(questionList);
-//                    intent.putExtra("list", (Serializable) questionList);
-//                    finish();
-//////
-//                    startActivity(intent);
+
 
 
                 }

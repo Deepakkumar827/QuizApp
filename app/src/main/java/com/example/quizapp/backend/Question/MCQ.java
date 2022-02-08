@@ -7,30 +7,38 @@ import java.io.Serializable;
 
 public class MCQ extends Question implements Serializable {
     String type="MCQ";  ////may be final/static
-    String message="currently unavailable";
-    String subject;
     String creator;
+    String board="all";
+    String standard="all";
+    String subject;
+    String prev="core";
+    String chapter="all";
+
     String question;
     String choice1;
     String choice2;
     String choice3;
     String choice4;
     int answer;
+    String message="currently unavailable";
+
 
     protected MCQ(){}
 
-    protected MCQ(String creator, String subject, String question, String choice1, String choice2, String choice3, String choice4, int answer, String message){
-        super();
-        this.creator=creator;
-        this.subject=subject;
-        this.question=question;
-        this.choice1=choice1;
-        this.choice2=choice2;
-        this.choice3=choice3;
-        this.choice4=choice4;
-        this.answer=answer;
-        this.message=message;
-
+    public MCQ(String creator, String board,String standard, String subject, String prev, String chapter, String question, String choice1, String choice2, String choice3, String choice4, int answer, String message) {
+        this.creator = creator;
+        this.board=board;
+        this.standard = standard;
+        this.subject = subject;
+        this.prev = prev;
+        this.chapter = chapter;
+        this.question = question;
+        this.choice1 = choice1;
+        this.choice2 = choice2;
+        this.choice3 = choice3;
+        this.choice4 = choice4;
+        this.answer = answer;
+        this.message = message;
     }
 
     @Override
@@ -78,5 +86,24 @@ public class MCQ extends Question implements Serializable {
 
     public int getAnswer() {
         return answer;
+    }
+
+    @Override
+    public String getStandard() {
+        return standard;
+    }
+
+    @Override
+    public String getPrev() {
+        return prev;
+    }
+
+    @Override
+    public String getChapter() {
+        return chapter;
+    }
+    @Override
+    public String getBoard() {
+        return board;
     }
 }

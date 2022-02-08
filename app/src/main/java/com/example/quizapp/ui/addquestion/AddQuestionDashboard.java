@@ -8,16 +8,12 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.quizapp.R;
 import com.example.quizapp.backend.data.DATA;
-
-import org.w3c.dom.Text;
 
 
 public class AddQuestionDashboard extends AppCompatActivity {
@@ -67,7 +63,7 @@ public class AddQuestionDashboard extends AppCompatActivity {
 
                         break;
                     case "MCQ":
-                        SMCQ4AddQuestionFragment fragment2=new SMCQ4AddQuestionFragment();
+                        MCQAddQuestionFragment fragment2=new MCQAddQuestionFragment();
                         FragmentTransaction transaction2=getSupportFragmentManager().beginTransaction();
                         transaction2.replace(R.id.add_question_dashboard_fragment, fragment2);
                         transaction2.commit();
@@ -88,7 +84,7 @@ public class AddQuestionDashboard extends AppCompatActivity {
 
                         break;
                     case "MSQ":
-                        MMCQ4AddQuestionFragment fragment5=new MMCQ4AddQuestionFragment();
+                        MSQAddQuestionFragment fragment5=new MSQAddQuestionFragment();
                         FragmentTransaction transaction5=getSupportFragmentManager().beginTransaction();
                         transaction5.replace(R.id.add_question_dashboard_fragment, fragment5);
                         transaction5.commit();
@@ -122,7 +118,7 @@ public class AddQuestionDashboard extends AppCompatActivity {
 
                         break;
                     case "MCQ":
-                        SMCQ4AddQuestionFragment fragment2=new SMCQ4AddQuestionFragment();
+                        MCQAddQuestionFragment fragment2=new MCQAddQuestionFragment();
                         FragmentTransaction transaction2=getSupportFragmentManager().beginTransaction();
                         transaction2.replace(R.id.add_question_dashboard_fragment, fragment2);
                         transaction2.commit();
@@ -143,7 +139,7 @@ public class AddQuestionDashboard extends AppCompatActivity {
 
                         break;
                     case "MSQ":
-                        MMCQ4AddQuestionFragment fragment5=new MMCQ4AddQuestionFragment();
+                        MSQAddQuestionFragment fragment5=new MSQAddQuestionFragment();
                         FragmentTransaction transaction5=getSupportFragmentManager().beginTransaction();
                         transaction5.replace(R.id.add_question_dashboard_fragment, fragment5);
                         transaction5.commit();

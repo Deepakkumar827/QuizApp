@@ -12,7 +12,7 @@ public class QuestionData {
 
     }
     public static void setmAD_SMCQ(){
-        mAD_SMCQ.add(Question.createMCQ("Deepak","MAD", "Android is -", "an operating system", "a web browser", "a web server", "None of the above", 1, "none"));
+        /*mAD_SMCQ.add(Question.createMCQ("Deepak","MAD", "Android is -", "an operating system", "a web browser", "a web server", "None of the above", 1, "none"));
         mAD_SMCQ.add(Question.createMCQ("Deepak","MAD", "Under which of the following Android is licensed?", "OSS", "Sourceforge", "Apache/MIT", "None of the above", 3, "none"));
         mAD_SMCQ.add(Question.createMCQ("Deepak","MAD", "For which of the following Android is mainly developed?", "Servers", "Desktops", "Laptops", "Mobile devices", 4, "none"));
         mAD_SMCQ.add(Question.createMCQ("Deepak","MAD", "Which of the following is the first mobile phone released that ran the Android OS?", "HTC Hero", "Google gPhone", "T - Mobile G1", "None of the above", 3, "none"));
@@ -25,7 +25,7 @@ public class QuestionData {
         mAD_SMCQ.add(Question.createMCQ("Deepak","MAD", "What is an activity in android?", "android class", "android package", "A single screen in an application with supporting java code", "None of the above", 3, "none"));
         mAD_SMCQ.add(Question.createMCQ("Deepak","MAD", "How can we kill an activity in android?", "Using finish() method", "Using finishActivity(int requestCode)", "Both (a) and (b)", "Neither (a) nor (b)", 3, "none"));
         mAD_SMCQ.add(Question.createMCQ("Deepak","MAD", "ADB stands for -", "Android debug bridge", "Android delete bridge", "Android destroy bridge", "None of the above", 1, "none"));
-
+*/
     }
 
 }

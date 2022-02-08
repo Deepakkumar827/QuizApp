@@ -155,19 +155,34 @@ public class QuizDashboard extends AppCompatActivity {
         } else {
             switch (questionList.get(i).getType()) {
                 case "MCQ":
-                    SMCQ4userFragment fragment1 = new SMCQ4userFragment(questionList.get(i));
-                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                    MCQuserFragment fragment1 = new MCQuserFragment(questionList.get(i));
+                    FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
 
-                    transaction.replace(R.id.fragement_question, fragment1);
-                    transaction.commit();
+                    transaction1.replace(R.id.fragement_question, fragment1);
+                    transaction1.commit();
 
 
                     break;
                 case "IVA":
+                    IVAuserFragment fragment2 = new IVAuserFragment(questionList.get(i));
+                    FragmentTransaction transaction2 = getSupportFragmentManager().beginTransaction();
+
+                    transaction2.replace(R.id.fragement_question, fragment2);
+                    transaction2.commit();
                     break;
                 case "SWA":
+                    SWAuserFragment fragment3 = new SWAuserFragment(questionList.get(i));
+                    FragmentTransaction transaction3 = getSupportFragmentManager().beginTransaction();
+
+                    transaction3.replace(R.id.fragement_question, fragment3);
+                    transaction3.commit();
                     break;
                 case "NAT":
+                    NVAuserFragment fragment4 = new NVAuserFragment(questionList.get(i));
+                    FragmentTransaction transaction4 = getSupportFragmentManager().beginTransaction();
+
+                    transaction4.replace(R.id.fragement_question, fragment4);
+                    transaction4.commit();
                     break;
                 default:
                     break;

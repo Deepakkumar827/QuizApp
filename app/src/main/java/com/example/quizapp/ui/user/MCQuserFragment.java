@@ -20,12 +20,7 @@ import com.example.quizapp.backend.Question.Question;
 
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link IVAuserFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class SMCQ4userFragment extends Fragment {
+public class MCQuserFragment extends Fragment {
     CardView card_question, card_opt1, card_opt2, card_opt3, card_opt4;
     TextView text_question, text_opt1, text_opt2, text_opt3, text_opt4;
     int index=0;
@@ -42,29 +37,12 @@ public class SMCQ4userFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public SMCQ4userFragment(Question question) {
+    public MCQuserFragment(Question question) {
         // Required empty public constructor
         current_question=question;
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment IVAuserFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static IVAuserFragment newInstance(String param1, String param2) {
-        IVAuserFragment fragment = new IVAuserFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
 
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
