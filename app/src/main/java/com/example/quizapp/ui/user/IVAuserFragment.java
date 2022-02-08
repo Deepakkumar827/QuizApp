@@ -30,14 +30,7 @@ public class IVAuserFragment extends Fragment {
     ArrayList<String> answer_given;
     int total_question, question_unsolved, question_solved, question_wrong, question_correct;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public IVAuserFragment(Question question) {
         // Required empty public constructor
@@ -48,10 +41,7 @@ public class IVAuserFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
@@ -82,10 +72,10 @@ public class IVAuserFragment extends Fragment {
             setListener();
         } else {
             if (Integer.parseInt(answer_given.get(index)) == ((IVA) current_question).getAnswer()) {
-                text_user_ans.getBackground().setTint(Color.GREEN);
+                text_user_ans.setBackgroundColor(Color.GREEN);
 //                text_actual_ans_btn.getBackground().setTint(Color.GREEN);
             } else {
-                text_user_ans.getBackground().setTint(Color.RED);
+                text_user_ans.setBackgroundColor(Color.RED);
 //                text_actual_ans_btn.getBackground().setTint(Color.RED);
 
             }
@@ -102,12 +92,12 @@ public class IVAuserFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (question.getAnswer() == Integer.parseInt(text_user_ans.getText().toString())) {
-                    text_user_ans.getBackground().setTint(Color.GREEN);
+                    text_user_ans.setBackgroundColor(Color.GREEN);
 //                    text_actual_ans_btn.getBackground().setTint(Color.GREEN);
                     update_top_bar(1);
 
                 } else {
-                    text_user_ans.getBackground().setTint(Color.RED);
+                    text_user_ans.setBackgroundColor(Color.RED);
 //                    text_actual_ans_btn.getBackground().setTint(Color.RED);
                     update_top_bar(-1);
 

@@ -1,6 +1,7 @@
 package com.example.quizapp.ui.user;
 
 import android.graphics.Color;
+import android.graphics.text.TextRunShaper;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -23,7 +24,7 @@ import com.example.quizapp.backend.Question.SWA;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class NVAuserFragment extends Fragment {
+public class NATuserFragment extends Fragment {
     TextView text_question;
     EditText text_user_ans;
     Button text_actual_ans_btn;
@@ -37,7 +38,7 @@ public class NVAuserFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public NVAuserFragment(Question question) {
+    public NATuserFragment(Question question) {
         // Required empty public constructor
         current_question = question;
     }
@@ -67,23 +68,24 @@ public class NVAuserFragment extends Fragment {
         text_user_ans = getView().findViewById(R.id.user_answer);
         text_actual_ans_btn = getView().findViewById(R.id.set_button);
 
-        SWA question = (SWA) current_question;
+        NAT question = (NAT) current_question;
         text_question.setText(question.getQuestion());
 
         text_user_ans.setEnabled(false);
 
+
         index = ((QuizDashboard) getActivity()).index;
         answer_given = ((QuizDashboard) getActivity()).answer_given;
         if (answer_given.get(index) == "") {
-            text_user_ans.setEnabled(false);
+            text_user_ans.setEnabled(true);
 
             setListener();
         } else {
-            if (Float.parseFloat(answer_given.get(index)) == (float) ((NAT) current_question).getAnswer()) {
-                text_user_ans.getBackground().setTint(Color.GREEN);
+            if (Math.abs(Float.parseFloat(answer_given.get(index)) - ((NAT) current_question).getAnswer())<=0.1) {
+                text_user_ans.setBackgroundColor(Color.GREEN);
 //                text_actual_ans_btn.getBackground().setTint(Color.GREEN);
             } else {
-                text_user_ans.getBackground().setTint(Color.RED);
+                text_user_ans.setBackgroundColor(Color.RED);
 //                text_actual_ans_btn.getBackground().setTint(Color.RED);
 
             }
@@ -94,19 +96,19 @@ public class NVAuserFragment extends Fragment {
     }
 
     void setListener() {
-        SWA question = (SWA) current_question;
+        NAT question = (NAT) current_question;
 
         text_actual_ans_btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                if (Float.parseFloat(question.getAnswer()) == Float.parseFloat(text_user_ans.getText().toString())) {
-                    text_user_ans.getBackground().setTint(Color.GREEN);
+                if ( Math.abs(question.getAnswer() - Float.parseFloat(text_user_ans.getText().toString()))<=0.1) {
+                    text_user_ans.setBackgroundColor(Color.GREEN);
 //                    text_actual_ans_btn.getBackground().setTint(Color.GREEN);
                     update_top_bar(1);
 
                 } else {
-                    text_user_ans.getBackground().setTint(Color.RED);
+                    text_user_ans.setBackgroundColor(Color.RED);
 //                    text_actual_ans_btn.getBackground().setTint(Color.RED);
                     update_top_bar(-1);
 

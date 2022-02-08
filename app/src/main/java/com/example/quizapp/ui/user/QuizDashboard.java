@@ -178,7 +178,7 @@ public class QuizDashboard extends AppCompatActivity {
                     transaction3.commit();
                     break;
                 case "NAT":
-                    NVAuserFragment fragment4 = new NVAuserFragment(questionList.get(i));
+                    NATuserFragment fragment4 = new NATuserFragment(questionList.get(i));
                     FragmentTransaction transaction4 = getSupportFragmentManager().beginTransaction();
 
                     transaction4.replace(R.id.fragement_question, fragment4);

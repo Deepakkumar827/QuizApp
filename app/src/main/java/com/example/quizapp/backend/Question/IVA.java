@@ -24,6 +24,9 @@ public class IVA extends Question implements Serializable {
     String message="currently unavailable";
 
 
+    public IVA(){}
+
+
     public IVA(String creator, String board, String standard, String prev, String subject, String chapter, String question, int answer, String message) {
         this.creator = creator;
         this.board=board;

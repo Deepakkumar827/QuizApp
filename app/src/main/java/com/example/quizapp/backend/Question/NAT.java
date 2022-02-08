@@ -56,7 +56,7 @@ public class NAT extends Question implements Serializable {
         return question;
     }
 
-    public double getAnswer() {
+    public float getAnswer() {
         return answer;
     }
 

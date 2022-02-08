@@ -60,7 +60,7 @@ public class QuizManager extends AppCompatActivity {
 
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, DATA.subject);
         subject.setAdapter(adapter1);
-        subject.setSelection(adapter1.getPosition("java"));
+        subject.setSelection(adapter1.getPosition("MAD"));
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, DATA.test_type);
         test_type.setAdapter(adapter2);
@@ -103,8 +103,8 @@ public class QuizManager extends AppCompatActivity {
                      questionList = new ArrayList<>();
 
 
-//                    String folder = subject_txt+"-"+test_type_txt;
-                    String folder = "MAD-IVA";
+                    String folder = subject_txt+"-"+test_type_txt;
+//                    String folder = "MAD-IVA";
                     databaseReference = FirebaseDatabase.getInstance().getReference().child(folder);
 //                    databaseReference= FirebaseDatabase.getInstance().getReference(folder);
                     databaseReference.addValueEventListener(new ValueEventListener() {

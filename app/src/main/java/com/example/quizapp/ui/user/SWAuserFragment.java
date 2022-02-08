@@ -78,11 +78,11 @@ public class SWAuserFragment extends Fragment {
         else{
 
             if(answer_given.get(index).trim().toUpperCase(Locale.ROOT).equals(((SWA)current_question).getAnswer().trim().toUpperCase(Locale.ROOT))){
-                text_user_ans.getBackground().setTint(Color.GREEN);
+                text_user_ans.setBackgroundColor(Color.GREEN);
 //                text_actual_ans_btn.getBackground().setTint(Color.GREEN);
             }
             else{
-                text_user_ans.getBackground().setTint(Color.RED);
+                text_user_ans.setBackgroundColor(Color.RED);
 //                text_actual_ans_btn.getBackground().setTint(Color.RED);
 
             }
