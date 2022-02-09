@@ -123,6 +123,7 @@ public class MCQuserFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+
                 if(question.getAnswer()==1){
                     setCardColor(1,Color.GREEN);
                     update_top_bar(1);

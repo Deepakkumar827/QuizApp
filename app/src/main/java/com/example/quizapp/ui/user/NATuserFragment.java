@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.quizapp.R;
 import com.example.quizapp.backend.Question.MCQ;
@@ -81,6 +82,8 @@ public class NATuserFragment extends Fragment {
 
             setListener();
         } else {
+            text_actual_ans_btn.setText(Float.toString(question.getAnswer()));
+
             if (Math.abs(Float.parseFloat(answer_given.get(index)) - ((NAT) current_question).getAnswer())<=0.1) {
                 text_user_ans.setBackgroundColor(Color.GREEN);
 //                text_actual_ans_btn.getBackground().setTint(Color.GREEN);
@@ -102,6 +105,10 @@ public class NATuserFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                if (text_user_ans.getText().toString().matches("")) {
+                    Toast.makeText(getContext(), "Please put answer", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 if ( Math.abs(question.getAnswer() - Float.parseFloat(text_user_ans.getText().toString()))<=0.1) {
                     text_user_ans.setBackgroundColor(Color.GREEN);
 //                    text_actual_ans_btn.getBackground().setTint(Color.GREEN);
@@ -114,6 +121,7 @@ public class NATuserFragment extends Fragment {
 
                 }
                 text_user_ans.setEnabled(false);
+                text_actual_ans_btn.setText(Float.toString(question.getAnswer()));
 
                 answer_given.set(index, text_user_ans.getText().toString());
                 text_actual_ans_btn.setOnClickListener(null);

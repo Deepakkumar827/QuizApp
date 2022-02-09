@@ -7,9 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowId;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -31,9 +34,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class QuizManager extends AppCompatActivity {
     Button exit, ok;
+    ProgressBar waitProgressbar;
+    Timer progressbarTimer;
+    int  progressbarCount=0;
     EditText no_of_question;
     Spinner test_mode, test_type, subject;
     List<Question> questionList;
@@ -56,6 +64,11 @@ public class QuizManager extends AppCompatActivity {
 
         exit = findViewById(R.id.exit);
         ok = findViewById(R.id.submit);
+        waitProgressbar=findViewById(R.id.quiz_manager_progressbar);
+        progressbarTimer=new Timer();
+
+
+
 
 
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, DATA.subject);
@@ -85,9 +98,17 @@ public class QuizManager extends AppCompatActivity {
             }
         });
 
+        questionList = new ArrayList<>();
+
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                waitProgressbar.setVisibility(View.VISIBLE);
+
+                questionList.clear();
+
+                progressbar();
                 Intent intent = new Intent(getApplicationContext(), QuizDashboard.class);
                 if (no_of_question.getText().toString().trim().matches("") || Integer.parseInt(no_of_question.getText().toString().trim()) == 0) {
                     Toast.makeText(getApplicationContext(), "Please fill in all the required fields.", Toast.LENGTH_SHORT).show();
@@ -100,7 +121,6 @@ public class QuizManager extends AppCompatActivity {
 //                    questionList=question_ar/ray_list;
 
 //                    QuestionData.setmAD_SMCQ();
-                     questionList = new ArrayList<>();
 
 
                     String folder = subject_txt+"-"+test_type_txt;
@@ -140,12 +160,21 @@ public class QuizManager extends AppCompatActivity {
 
                             Collections.shuffle(questionList);
                             intent.putExtra("list", (Serializable) questionList);
+                            waitProgressbar.setVisibility(View.GONE);
+                            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
+                            progressbarTimer.cancel();
                             finish();
                             startActivity(intent);
                         }
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
+                            progressbarTimer.cancel();
+
+                            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                            Toast.makeText(getApplicationContext(), "error while fetching data", Toast.LENGTH_LONG).show();
+                            finish();
 
                         }
 
@@ -160,5 +189,29 @@ public class QuizManager extends AppCompatActivity {
             }
         });
 
+    }
+
+    void progressbar(){
+
+
+         TimerTask  timerTask=new TimerTask() {
+            @Override
+            public void run() {
+                progressbarCount++;
+
+                Log.w("asdf", "progresss");
+                waitProgressbar.setProgress(progressbarCount);
+                if(progressbarCount>5){
+                    Toast.makeText(getApplicationContext(), "internet problem", Toast.LENGTH_LONG).show();
+
+                    progressbarTimer.cancel();
+                    waitProgressbar.setVisibility(View.GONE);
+
+                    finish();
+                }
+            }
+        };
+
+        progressbarTimer.schedule(timerTask, 0, 1000);
     }
 }

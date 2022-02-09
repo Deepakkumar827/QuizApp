@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.quizapp.R;
 import com.example.quizapp.backend.Question.IVA;
@@ -71,6 +72,8 @@ public class IVAuserFragment extends Fragment {
 
             setListener();
         } else {
+            text_actual_ans_btn.setText(Integer.toString(question.getAnswer()));
+
             if (Integer.parseInt(answer_given.get(index)) == ((IVA) current_question).getAnswer()) {
                 text_user_ans.setBackgroundColor(Color.GREEN);
 //                text_actual_ans_btn.getBackground().setTint(Color.GREEN);
@@ -91,21 +94,27 @@ public class IVAuserFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                if (question.getAnswer() == Integer.parseInt(text_user_ans.getText().toString())) {
-                    text_user_ans.setBackgroundColor(Color.GREEN);
+                if(text_user_ans.getText().toString().matches("")){
+                    Toast.makeText(getContext(), "Please put answer", Toast.LENGTH_SHORT).show();
+                 }
+                else{
+                    if (question.getAnswer() == Integer.parseInt(text_user_ans.getText().toString())) {
+                        text_user_ans.setBackgroundColor(Color.GREEN);
 //                    text_actual_ans_btn.getBackground().setTint(Color.GREEN);
-                    update_top_bar(1);
+                        update_top_bar(1);
 
-                } else {
-                    text_user_ans.setBackgroundColor(Color.RED);
+                    } else {
+                        text_user_ans.setBackgroundColor(Color.RED);
 //                    text_actual_ans_btn.getBackground().setTint(Color.RED);
-                    update_top_bar(-1);
+                        update_top_bar(-1);
 
+                    }
+                    text_actual_ans_btn.setText(Integer.toString(question.getAnswer()));
+                    answer_given.set(index, text_user_ans.getText().toString());
+                    text_actual_ans_btn.setOnClickListener(null);
+                    text_user_ans.setEnabled(false);
                 }
 
-                answer_given.set(index, text_user_ans.getText().toString());
-                text_actual_ans_btn.setOnClickListener(null);
-                text_user_ans.setEnabled(false);
 
             }
 

@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -108,6 +109,7 @@ public class SWAAddQuestionFragment extends Fragment {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                 String cr=AddQuestionDashboard.device_id;
                 String sub=((Spinner)getActivity().findViewById(R.id.spinner_subject)).getSelectedItem().toString().trim();
                 String qs=question.getText().toString().trim();

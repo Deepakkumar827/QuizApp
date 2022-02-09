@@ -76,6 +76,7 @@ public class SWAuserFragment extends Fragment {
             setListener();
         }
         else{
+            text_actual_ans_btn.setText(question.getAnswer());
 
             if(answer_given.get(index).trim().toUpperCase(Locale.ROOT).equals(((SWA)current_question).getAnswer().trim().toUpperCase(Locale.ROOT))){
                 text_user_ans.setBackgroundColor(Color.GREEN);
@@ -109,6 +110,10 @@ public class SWAuserFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                if (text_user_ans.getText().toString().matches("")) {
+                    Toast.makeText(getContext(), "Please put answer", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 //                Toast.makeText(getContext(), question.getAnswer().trim().toLowerCase(Locale.ROOT).getClass()+"--+--"+text_user_ans.getText().toString().trim().toLowerCase(Locale.ROOT).getClass(), Toast.LENGTH_LONG).show();
 
                 if(question.getAnswer().trim().toUpperCase(Locale.ROOT).equals(text_user_ans.getText().toString().trim().toUpperCase(Locale.ROOT))){
@@ -125,6 +130,7 @@ public class SWAuserFragment extends Fragment {
                 }
 
                 text_user_ans.setEnabled(false);
+                text_actual_ans_btn.setText(question.getAnswer());
 
                 answer_given.set(index, text_user_ans.getText().toString());
                 text_actual_ans_btn.setOnClickListener(null);
