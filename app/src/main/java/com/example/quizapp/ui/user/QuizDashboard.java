@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -74,6 +76,7 @@ public class QuizDashboard extends AppCompatActivity {
         updateTopBar();
 
 
+
         countDownTimer = new CountDownTimer(timelimit_min * 60000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -114,6 +117,8 @@ public class QuizDashboard extends AppCompatActivity {
                 callNext(questionList, ++index);
             }
         });
+
+
     }
 
 

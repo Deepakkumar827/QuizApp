@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.example.quizapp.R;
@@ -26,6 +28,8 @@ public class MCQuserFragment extends Fragment {
     int index=0;
     ArrayList<String> answer_given;
     int total_question, question_unsolved, question_solved, question_wrong, question_correct;
+    Animation scale;
+    Animation scale_down;
 
     Question current_question;
     // TODO: Rename parameter arguments, choose names that match
@@ -86,6 +90,8 @@ public class MCQuserFragment extends Fragment {
         text_opt3.setText(question.getChoice3());
         text_opt4.setText(question.getChoice4());
 
+        scale=AnimationUtils.loadAnimation(getContext(), R.anim.scale);
+        scale_down=AnimationUtils.loadAnimation(getContext(), R.anim.scale_down);
 
         index=((QuizDashboard)getActivity()).index;
         answer_given=((QuizDashboard)getActivity()).answer_given;
@@ -127,12 +133,15 @@ public class MCQuserFragment extends Fragment {
                 if(question.getAnswer()==1){
                     setCardColor(1,Color.GREEN);
                     update_top_bar(1);
+                    card_opt1.startAnimation(scale);
 
                 }
                 else {
                     setCardColor(1,Color.RED);
                     setCardColor(question.getAnswer(),Color.GREEN);
                     update_top_bar(-1);
+                    card_opt1.startAnimation(scale_down);
+                    setDownAnim(question.getAnswer());
 
                 }
 
@@ -148,12 +157,15 @@ public class MCQuserFragment extends Fragment {
                 if(question.getAnswer()==2){
                     setCardColor(2,Color.GREEN);
                     update_top_bar(1);
+                    card_opt2.startAnimation(scale);
 
                 }
                 else {
                     setCardColor(2,Color.RED);
                     setCardColor(question.getAnswer(),Color.GREEN);
                     update_top_bar(-1);
+                    card_opt2.startAnimation(scale_down);
+                    setDownAnim(question.getAnswer());
 
 
                 }
@@ -170,13 +182,16 @@ public class MCQuserFragment extends Fragment {
                 if(question.getAnswer()==3){
                     setCardColor(3,Color.GREEN);
                     update_top_bar(1);
+                    card_opt3.startAnimation(scale);
 
                 }
                 else {
                     setCardColor(3,Color.RED);
                     setCardColor(question.getAnswer(),Color.GREEN);
+                    setDownAnim(question.getAnswer());
 
                     update_top_bar(-1);
+                    card_opt3.startAnimation(scale_down);
 
                 }
                 answer_given.set(index, Integer.toString(3));
@@ -191,13 +206,16 @@ public class MCQuserFragment extends Fragment {
             public void onClick(View v) {
                 if(question.getAnswer()==4){
                     setCardColor(4,Color.GREEN);
+                    setDownAnim(question.getAnswer());
                     update_top_bar(1);
+                    card_opt4.startAnimation(scale);
 
                 }
                 else {
                     setCardColor(4,Color.RED);
                     setCardColor(question.getAnswer(),Color.GREEN);
                     update_top_bar(-1);
+                    card_opt4.startAnimation(scale_down);
 
 
                 }
@@ -234,6 +252,31 @@ public class MCQuserFragment extends Fragment {
 
     }
 
+    void setDownAnim(int opt){
+        switch (opt){
+            case 1:
+
+                card_opt1.startAnimation(scale);
+
+                break;
+            case 2:
+                card_opt2.startAnimation(scale);
+
+                break;
+            case 3:
+                card_opt3.startAnimation(scale);
+
+                break;
+            case 4:
+                card_opt4.startAnimation(scale);
+
+                break;
+
+            default:
+                break;
+
+        }
+    }
 
     void disableAllButton(){
         card_opt1.setOnClickListener(null);

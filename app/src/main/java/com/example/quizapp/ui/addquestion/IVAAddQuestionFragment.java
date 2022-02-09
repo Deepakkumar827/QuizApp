@@ -124,7 +124,6 @@ public class IVAAddQuestionFragment extends Fragment {
                     Toast.makeText(getContext(), "Please fill in all the required fields.", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    int check=0;
                     int ans=Integer.parseInt(s_ans);
                     Question question=Question.createIVA(cr,"all","standard",  "prev", sub, "chapter", qs, ans, msg);
 
