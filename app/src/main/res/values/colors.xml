@@ -12,6 +12,8 @@
     <color name="lightblue">#9FACCA</color>
     <color name="lightyellow">#D6D4A9</color>
     <color name="default_background_color">#6E8059</color>
+    <color name="default_window_background_color_day">#BEC7CD</color>
+    <color name="default_window_background_color_night">#A6EAE1E1</color>
     <color name="red_color">#AC3131</color>
     <color name="green_color">#236E23</color>
     <color name="blue_color">#1A1A9E</color>
