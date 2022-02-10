@@ -9,11 +9,10 @@ public class SWA extends Question implements Serializable {
     String type="SWA";  ////may be final/static
     String creator;
 
-    String message="currently unavailable";
+    String message="nothing";
     String board="all";
     String standard="all";
     String subject;
-    String prev="core";
     String chapter="all";
     String question;
     String answer;
@@ -23,13 +22,12 @@ public class SWA extends Question implements Serializable {
     protected SWA(){}
 
 
-    public SWA(String creator, String board,  String standard, String subject, String prev, String chapter, String question, String answer, String message) {
+    public SWA(String creator, String board,  String standard, String subject, String chapter, String question, String answer, String message) {
         this.creator = creator;
         this.message = message;
         this.board=board;
         this.standard = standard;
         this.subject = subject;
-        this.prev = prev;
         this.chapter = chapter;
         this.question = question;
         this.answer = answer;
@@ -70,11 +68,6 @@ public class SWA extends Question implements Serializable {
     @Override
     public String getStandard() {
         return standard;
-    }
-
-    @Override
-    public String getPrev() {
-        return prev;
     }
 
     @Override

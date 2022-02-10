@@ -16,23 +16,21 @@ public class IVA extends Question implements Serializable {
     String board="all";
     String standard="all";
 
-    String prev="core";
     String subject;
     String chapter="all";
     String question;
     int answer;
-    String message="currently unavailable";
+    String message="nothing";
 
 
     public IVA(){}
 
 
-    public IVA(String creator, String board, String standard, String prev, String subject, String chapter, String question, int answer, String message) {
+    public IVA(String creator, String board, String standard, String subject, String chapter, String question, int answer, String message) {
         this.creator = creator;
         this.board=board;
         this.message = message;
         this.standard = standard;
-        this.prev = prev;
         this.subject = subject;
         this.chapter = chapter;
         this.question = question;
@@ -71,10 +69,6 @@ public class IVA extends Question implements Serializable {
         return standard;
     }
 
-    @Override
-    public String getPrev() {
-        return prev;
-    }
     @Override
     public String getChapter() {
         return chapter;

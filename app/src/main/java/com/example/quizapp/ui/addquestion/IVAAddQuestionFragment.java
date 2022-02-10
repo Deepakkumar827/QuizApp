@@ -23,11 +23,6 @@ import com.example.quizapp.backend.firebase.FireBaseManager;
 import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link IVAAddQuestionFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class IVAAddQuestionFragment extends Fragment {
     EditText  question, answer, message;
     Button exit, submit;
@@ -39,23 +34,11 @@ public class IVAAddQuestionFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public IVAAddQuestionFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment IVAAddQuestionFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static IVAAddQuestionFragment newInstance(String param1, String param2) {
         IVAAddQuestionFragment fragment = new IVAAddQuestionFragment();
         Bundle args = new Bundle();
@@ -68,10 +51,6 @@ public class IVAAddQuestionFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -115,17 +94,19 @@ public class IVAAddQuestionFragment extends Fragment {
                 getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
                 String cr=AddQuestionDashboard.device_id;
+                String std=((Spinner)getActivity().findViewById(R.id.spinner_standard)).getSelectedItem().toString().trim();
                 String sub=((Spinner)getActivity().findViewById(R.id.spinner_subject)).getSelectedItem().toString().trim();
+                String chapter=((Spinner)getActivity().findViewById(R.id.spinner_chapter)).getSelectedItem().toString().trim();
                 String qs=question.getText().toString().trim();
                 String s_ans=answer.getText().toString().trim();
                 String msg=message.getText().toString().trim();
 
-                if (cr.matches("") || sub.matches("") || qs.matches("") || s_ans.matches("") || msg.matches("")) {
+                if (cr.matches("")  || std.matches("") || sub.matches("") || chapter.matches("")  || qs.matches("") || s_ans.matches("") || msg.matches("")) {
                     Toast.makeText(getContext(), "Please fill in all the required fields.", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     int ans=Integer.parseInt(s_ans);
-                    Question question=Question.createIVA(cr,"all","standard",  "prev", sub, "chapter", qs, ans, msg);
+                    Question question=Question.createIVA(cr,"root",std,  sub, chapter, qs, ans, msg);
 
 //                    Test.abc();
 

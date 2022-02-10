@@ -119,18 +119,18 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginRight="20dp"
-            android:layout_toLeftOf="@+id/textView1"
+            android:layout_toLeftOf="@+id/screenshot_textview_btn"
             android:text="00:00:00"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/screenshot_textview_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:text="Stop"
+            android:text="Share"
             android:textSize="16sp" />
     </RelativeLayout>
 
@@ -154,6 +154,7 @@
         android:layout_weight="1">
 
         <androidx.core.widget.NestedScrollView
+            android:id="@+id/layout_for_screenshot"
             android:layout_width="match_parent"
 
             android:layout_height="wrap_content"

@@ -111,17 +111,19 @@ public class SWAAddQuestionFragment extends Fragment {
             public void onClick(View v) {
                 getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                 String cr=AddQuestionDashboard.device_id;
+                String std=((Spinner)getActivity().findViewById(R.id.spinner_standard)).getSelectedItem().toString().trim();
                 String sub=((Spinner)getActivity().findViewById(R.id.spinner_subject)).getSelectedItem().toString().trim();
+                String chapter=((Spinner)getActivity().findViewById(R.id.spinner_chapter)).getSelectedItem().toString().trim();
                 String qs=question.getText().toString().trim();
                 String  ans=answer.getText().toString().trim();
                 String msg=message.getText().toString().trim();
 
-                if (cr.matches("") || sub.matches("") || qs.matches("") || ans.matches("") ||  msg.matches("")) {
+                if (cr.matches("") || std.matches("") || sub.matches("") || chapter.matches("") || qs.matches("") || ans.matches("") ||  msg.matches("")) {
                     Toast.makeText(getContext(), "Please fill in all the required fields.", Toast.LENGTH_SHORT).show();
                 }
 
                 else {
-                    Question question = Question.createSWA(cr,"all","standard",sub, "prev", "all" , qs, ans, msg);
+                    Question question = Question.createSWA(cr,"root",std,sub,  chapter, qs, ans, msg);
 
 
                     AddToFirebase.add(getActivity(), question);

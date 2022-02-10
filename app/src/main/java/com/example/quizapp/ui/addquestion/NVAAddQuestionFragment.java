@@ -111,19 +111,20 @@ public class NVAAddQuestionFragment extends Fragment {
             public void onClick(View v) {
                 getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                 String cr=AddQuestionDashboard.device_id;
+                String std=((Spinner)getActivity().findViewById(R.id.spinner_standard)).getSelectedItem().toString().trim();
                 String sub=((Spinner)getActivity().findViewById(R.id.spinner_subject)).getSelectedItem().toString().trim();
+                String chapter=((Spinner)getActivity().findViewById(R.id.spinner_chapter)).getSelectedItem().toString().trim();
                 String qs=question.getText().toString().trim();
                 String s_ans=answer.getText().toString().trim();
                 String msg=message.getText().toString().trim();
 
-                if (cr.matches("") || sub.matches("") || qs.matches("") || s_ans.matches("") ||  msg.matches("")) {
+                if (cr.matches("")  || std.matches("") || sub.matches("") || chapter.matches("")  || qs.matches("") || s_ans.matches("") ||  msg.matches("")) {
                     Toast.makeText(getContext(), "Please fill in all the required fields.", Toast.LENGTH_SHORT).show();
                 }
 
                 else{
-                    int check=0;
                     float ans=(float) Double.parseDouble(s_ans);
-                    Question question=Question.createNVA(cr,"all","standard",  "prev", sub, "chapter", qs, ans,(float) 0.1, msg);
+                    Question question=Question.createNVA(cr,"root",std,   sub, chapter, qs, ans,(float) 0.1, msg);
 
                     AddToFirebase.add(getActivity(), question);
 

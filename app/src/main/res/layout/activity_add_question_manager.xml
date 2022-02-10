@@ -53,7 +53,39 @@
 
                 <Spinner
                     android:textAlignment="center"
+                    android:id="@+id/spinner_standard"
+                    style="@style/otherview_medium"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/lightblue"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_border"
+
+
+                    />
+
+                <Spinner
+                    android:textAlignment="center"
                     android:id="@+id/spinner_subject"
+                    style="@style/otherview_medium"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/lightblue"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_border"
+
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal"
+                android:layout_margin="10dp">
+
+                <Spinner
+                    android:textAlignment="center"
+                    android:id="@+id/spinner_chapter"
                     style="@style/otherview_medium"
                     android:layout_margin="10dp"
                     android:backgroundTint="@color/lightblue"

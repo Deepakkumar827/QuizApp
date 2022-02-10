@@ -1,183 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     tools:context=".ui.user.QuizManager">
-
-    <!-- TODO: Update blank fragment layout -->
+    tools:context=".ui.user.QuizManager">
 
 
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <!-- TODO: Update blank fragment layout -->
+        android:layout_height="match_parent">
 
 
 
-
-
-
-        <TextView
-            android:id="@+id/textView2"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            style="@style/textview_extralarge"
-            android:layout_height="30dp"
-
-            android:text="Quiz manager" />
-
-
-        <TextView
-            android:id="@+id/textView4"
-            android:textSize="16sp"
+        <LinearLayout
             android:layout_width="match_parent"
-
-            android:background="@color/lightblue"
-            android:layout_height="20dp"
-            android:layout_marginTop="20dp"
-
-            android:text="types of question" />
-
-        <Spinner
-            android:id="@+id/subject"
-            style="@style/edittext_extralarge"
-            android:background="@color/lightblue"
-
-            />
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
 
 
+            <TextView
+                android:id="@+id/textView21"
+                style="@style/textview_extralarge"
+                android:layout_height="30dp"
+                android:text="Quiz manager"
+                android:textSize="24sp"
+
+                android:textStyle="bold" />
 
 
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginTop="30dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="number of questions"
-            android:textColorHint="@color/lightgreen"
-            app:hintTextColor="@color/lightgreen">
-            <EditText
-                android:id="@+id/no_of_question"
-                android:gravity="center"
+            <TextView
+                android:id="@+id/textView1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="20sp"
-                android:inputType="number"
+                android:layout_height="20dp"
 
-                android:lines="1"
+                android:layout_marginTop="20dp"
+                android:background="@color/lightblue"
+                android:text="standard"
 
-                />
+                android:textSize="16sp" />
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
-
+            <Spinner
+                android:id="@+id/standard"
+                style="@style/edittext_extralarge"
+                android:background="@color/lightblue"/>
 
 
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
 
+                android:layout_marginTop="20dp"
+                android:background="@color/lightblue"
+                android:text="subject"
 
+                android:textSize="16sp" />
 
+            <Spinner
+                android:id="@+id/subject"
+                style="@style/edittext_extralarge"
+                android:background="@color/lightblue"/>
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
 
+                android:layout_marginTop="20dp"
+                android:background="@color/lightblue"
+                android:text="chapter"
 
+                android:textSize="16sp" />
 
-
-        <TextView
-            android:id="@+id/textView3"
-            android:textSize="16sp"
-            android:layout_width="match_parent"
-
-            android:background="@color/lightblue"
-            android:layout_height="20dp"
-            android:layout_marginTop="20dp"
-
-            android:text="types of question" />
-
-        <Spinner
-            android:id="@+id/test_type"
-            style="@style/edittext_extralarge"
-            android:background="@color/lightblue"
-
-            />
-
-        <TextView
-            android:id="@+id/textView1"
-            android:textSize="16sp"
-            android:layout_width="match_parent"
-            android:background="@color/lightblue"
-
-            android:layout_height="20dp"
-            android:text="mode of test" />
-
-        <Spinner
-            android:id="@+id/test_mode"
-            style="@style/edittext_extralarge"
-
-            android:background="@color/lightblue"
-
-            />
-
-
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
-            android:layout_height="80dp">
-
-
-            <Button
-                android:id="@+id/exit"
-                android:layout_weight="1"
-                style="@style/button_medium_rounded"
-                android:layout_marginRight="20dp"
-
-                android:text="EXIT" />
-
-            <Button
-                android:id="@+id/submit"
-                android:layout_weight="1"
-                android:layout_marginLeft="20dp"
-                style="@style/button_medium_rounded"
-                android:text="SUBMIT" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="200dp"/>
+            <Spinner
+                android:id="@+id/chapter"
+                style="@style/edittext_extralarge"
+                android:background="@color/lightblue"/>
 
 
 
 
-    </LinearLayout>
 
-    <ProgressBar
-        android:id="@+id/quiz_manager_progressbar"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:visibility="invisible"
-        >
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
 
-    </ProgressBar>
+                android:layout_marginTop="20dp"
+                android:background="@color/lightblue"
+                android:text="types of question"
+
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/test_type"
+                style="@style/edittext_extralarge"
+                android:background="@color/lightblue"/>
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="30dp"
+                android:hint="number of questions"
+                android:textColorHint="@color/lightgreen"
+                app:hintTextColor="@color/lightgreen">
+
+                <EditText
+                    android:id="@+id/no_of_question"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:lines="1"
+
+                    android:textSize="20sp"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="20dp">
+
+
+                <Button
+                    android:id="@+id/exit"
+                    style="@style/button_medium_rounded"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+
+                    android:text="EXIT" />
+
+                <Button
+                    android:id="@+id/submit"
+                    style="@style/button_medium_rounded"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
+                    android:text="SUBMIT" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/quiz_manager_progressbar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ProgressBar>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>

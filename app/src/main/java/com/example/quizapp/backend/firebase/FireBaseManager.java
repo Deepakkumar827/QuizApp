@@ -23,7 +23,8 @@ public class FireBaseManager {
 
     public Task<Void> addQuestion(Question question){
         FirebaseDatabase db=FirebaseDatabase.getInstance();
-        databaseReference=db.getReference(question.getSubject()+"-"+question.getType());
+//        databaseReference=db.getReference(question.getSubject()+"-"+question.getType());
+        databaseReference=db.getReference(question.getBoard()+"/"+question.getStandard()+"/"+question.getSubject()+"/"+question.getChapter()+"/"+question.getType());
          return databaseReference.push().setValue(question);
     }
 

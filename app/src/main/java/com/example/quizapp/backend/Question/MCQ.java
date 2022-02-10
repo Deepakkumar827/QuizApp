@@ -11,7 +11,6 @@ public class MCQ extends Question implements Serializable {
     String board="all";
     String standard="all";
     String subject;
-    String prev="core";
     String chapter="all";
 
     String question;
@@ -20,17 +19,16 @@ public class MCQ extends Question implements Serializable {
     String choice3;
     String choice4;
     int answer;
-    String message="currently unavailable";
+    String message="nothing";
 
 
     protected MCQ(){}
 
-    public MCQ(String creator, String board,String standard, String subject, String prev, String chapter, String question, String choice1, String choice2, String choice3, String choice4, int answer, String message) {
+    public MCQ(String creator, String board,String standard, String subject, String chapter, String question, String choice1, String choice2, String choice3, String choice4, int answer, String message) {
         this.creator = creator;
         this.board=board;
         this.standard = standard;
         this.subject = subject;
-        this.prev = prev;
         this.chapter = chapter;
         this.question = question;
         this.choice1 = choice1;
@@ -93,10 +91,6 @@ public class MCQ extends Question implements Serializable {
         return standard;
     }
 
-    @Override
-    public String getPrev() {
-        return prev;
-    }
 
     @Override
     public String getChapter() {

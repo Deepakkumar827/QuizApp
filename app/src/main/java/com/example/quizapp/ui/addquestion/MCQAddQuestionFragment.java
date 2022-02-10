@@ -115,7 +115,9 @@ public class MCQAddQuestionFragment extends Fragment {
             public void onClick(View v) {
                 getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                 String cr=AddQuestionDashboard.device_id;
-                String sub=((Spinner)getActivity().findViewById(R.id.spinner_subject)).getSelectedItem().toString();
+                String std=((Spinner)getActivity().findViewById(R.id.spinner_standard)).getSelectedItem().toString().trim();
+                String sub=((Spinner)getActivity().findViewById(R.id.spinner_subject)).getSelectedItem().toString().trim();
+                String chapter=((Spinner)getActivity().findViewById(R.id.spinner_chapter)).getSelectedItem().toString().trim();
                 String qs=question.getText().toString().trim();
                 String opt1=option1.getText().toString().trim();
                 String opt2=option2.getText().toString().trim();
@@ -125,13 +127,13 @@ public class MCQAddQuestionFragment extends Fragment {
                 String msg=message.getText().toString().trim();
 
 
-                if (cr.matches("") || sub.matches("") || qs.matches("") || opt1.matches("") || opt2.matches("") || opt3.matches("") || opt4.matches("") || s_ans.matches("") ||  msg.matches("")) {
+                if (cr.matches("")  || std.matches("") || sub.matches("") || chapter.matches("")  || qs.matches("") || opt1.matches("") || opt2.matches("") || opt3.matches("") || opt4.matches("") || s_ans.matches("") ||  msg.matches("")) {
                     Toast.makeText(getContext(), "Please fill in all the required fields.", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     int check=0;
                     int  ans=Integer.parseInt(s_ans);
-                    Question question=Question.createMCQ(cr,"all","all",  sub, "prev", "chapter", qs,opt1, opt2, opt3, opt4, ans, msg);
+                    Question question=Question.createMCQ(cr,"root",std,  sub, chapter, qs,opt1, opt2, opt3, opt4, ans, msg);
                      AddToFirebase.add(getActivity(), question);
 
 //                    for(Question q: QuestionData.mAD_SMCQ){

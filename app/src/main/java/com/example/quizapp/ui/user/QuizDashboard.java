@@ -2,14 +2,24 @@ package com.example.quizapp.ui.user;
 
 import androidx.appcompat.app.AlertDialog;
 
+import android.Manifest;
 import android.content.DialogInterface;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -23,6 +33,10 @@ import com.example.quizapp.R;
 import com.example.quizapp.backend.Question.Question;
 import com.example.quizapp.backend.Question.MCQ;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -40,10 +54,11 @@ public class QuizDashboard extends AppCompatActivity {
     MCQ current;
     Button btn_prev, btn_middle, btn_next;
     int total_question, question_unsolved, question_solved, question_wrong, question_correct;
-    TextView timer, total_question_txt, question_unsolved_txt, question_solved_txt, question_wrong_txt, question_correct_txt;
+    TextView timer, total_question_txt, question_unsolved_txt, question_solved_txt, question_wrong_txt, question_correct_txt, screenshot_textview_btn;
     int timelimit_min = 600;
     AlertDialog.Builder builder;
-
+    File imagePath;
+    File todeletefile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +75,24 @@ public class QuizDashboard extends AppCompatActivity {
         question_unsolved_txt = findViewById(R.id.question_unsolved);
         question_correct_txt = findViewById(R.id.question_correct);
         question_wrong_txt = findViewById(R.id.question_wrong);
+        screenshot_textview_btn = findViewById(R.id.screenshot_textview_btn);
 
+
+        screenshot_textview_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!(PackageManager.PERMISSION_GRANTED == ContextCompat.checkSelfPermission(QuizDashboard.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) && PackageManager.PERMISSION_GRANTED == ContextCompat.checkSelfPermission(QuizDashboard.this, Manifest.permission.READ_EXTERNAL_STORAGE))) {
+                    ActivityCompat.requestPermissions(QuizDashboard.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
+
+                    return;
+                }
+                share(screenShot(findViewById(R.id.layout_for_screenshot)));
+
+                Log.w("asdf", "7711");
+
+
+            }
+        });
 
         questionList = (List<Question>) (getIntent().getSerializableExtra("list"));
         answer_given = new ArrayList<>(Arrays.asList(new String[questionList.size()]));
@@ -74,7 +106,6 @@ public class QuizDashboard extends AppCompatActivity {
         question_wrong = 0;
         question_correct = 0;
         updateTopBar();
-
 
 
         countDownTimer = new CountDownTimer(timelimit_min * 60000, 1000) {
@@ -134,7 +165,7 @@ public class QuizDashboard extends AppCompatActivity {
                     .setPositiveButton("EXIT", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             finish();
-                            Intent intent=new Intent(getApplicationContext(), ShowResultActivity.class);
+                            Intent intent = new Intent(getApplicationContext(), ShowResultActivity.class);
                             intent.putExtra("total", Integer.toString(total_question));
                             intent.putExtra("solved", Integer.toString(question_solved));
                             intent.putExtra("unsolved", Integer.toString(question_unsolved));
@@ -206,12 +237,35 @@ public class QuizDashboard extends AppCompatActivity {
 
     }
 
+    /*shareIt((takeScreenshot()));/8*/
+
+
+    private Bitmap screenShot(View view) {
+        Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        view.draw(canvas);
+        return bitmap;
+    }
+
+    private void share(Bitmap bitmap) {
+        Log.w("asdf", "777" );
+
+        String pathofBmp =
+                MediaStore.Images.Media.insertImage(getContentResolver(),
+                        bitmap, "QuizApp_screenshot", "ccc");
+        Uri uri = Uri.parse(pathofBmp);
+        Log.w("asdf", "777"+pathofBmp);
+
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("image/*");
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "QuizApp");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, "try this question");
+        shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+        startActivity(Intent.createChooser(shareIntent, "start"));
+
+
+    }
 }
-
-
-
-
-
 
 
 

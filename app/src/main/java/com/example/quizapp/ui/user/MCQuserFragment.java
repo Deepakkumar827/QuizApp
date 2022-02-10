@@ -141,7 +141,7 @@ public class MCQuserFragment extends Fragment {
                     setCardColor(question.getAnswer(),Color.GREEN);
                     update_top_bar(-1);
                     card_opt1.startAnimation(scale_down);
-                    setDownAnim(question.getAnswer());
+                    setUpAnim(question.getAnswer());
 
                 }
 
@@ -165,7 +165,7 @@ public class MCQuserFragment extends Fragment {
                     setCardColor(question.getAnswer(),Color.GREEN);
                     update_top_bar(-1);
                     card_opt2.startAnimation(scale_down);
-                    setDownAnim(question.getAnswer());
+                    setUpAnim(question.getAnswer());
 
 
                 }
@@ -188,7 +188,7 @@ public class MCQuserFragment extends Fragment {
                 else {
                     setCardColor(3,Color.RED);
                     setCardColor(question.getAnswer(),Color.GREEN);
-                    setDownAnim(question.getAnswer());
+                    setUpAnim(question.getAnswer());
 
                     update_top_bar(-1);
                     card_opt3.startAnimation(scale_down);
@@ -206,7 +206,7 @@ public class MCQuserFragment extends Fragment {
             public void onClick(View v) {
                 if(question.getAnswer()==4){
                     setCardColor(4,Color.GREEN);
-                    setDownAnim(question.getAnswer());
+                    setUpAnim(question.getAnswer());
                     update_top_bar(1);
                     card_opt4.startAnimation(scale);
 
@@ -216,6 +216,7 @@ public class MCQuserFragment extends Fragment {
                     setCardColor(question.getAnswer(),Color.GREEN);
                     update_top_bar(-1);
                     card_opt4.startAnimation(scale_down);
+                    setUpAnim(question.getAnswer());
 
 
                 }
@@ -252,7 +253,7 @@ public class MCQuserFragment extends Fragment {
 
     }
 
-    void setDownAnim(int opt){
+    void setUpAnim(int opt){
         switch (opt){
             case 1:
 
