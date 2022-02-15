@@ -28,6 +28,9 @@ public class Dir {
 
         head=new Trie("head");
         head.child.add(new Trie("all"));
+
+
+
         head.child.get(0).child.add(new Trie("10"));
         head.child.get(0).child.add(new Trie("11"));
         head.child.get(0).child.add(new Trie("12"));
@@ -64,18 +67,57 @@ public class Dir {
 
         head.child.get(0).child.get(1).child.add(new Trie("Chemistry"));
         head.child.get(0).child.get(1).child.get(0).child.add(new Trie("mixed"));
+
+
+
         head.child.get(0).child.get(1).child.add(new Trie("Physics"));
         head.child.get(0).child.get(1).child.get(1).child.add(new Trie("mixed"));
+
+
+
         head.child.get(0).child.get(1).child.add(new Trie("Biology"));
         head.child.get(0).child.get(1).child.get(2).child.add(new Trie("mixed"));
+        head.child.get(0).child.get(1).child.get(2).child.get(0).child.add(new Trie("MCQ"));
+        head.child.get(0).child.get(1).child.get(2).child.get(0).child.add(new Trie("IVA"));
+        head.child.get(0).child.get(1).child.get(2).child.get(0).child.add(new Trie("SWA"));
+        head.child.get(0).child.get(1).child.get(2).child.get(0).child.add(new Trie("NAT"));
+
+
+
         head.child.get(0).child.get(1).child.add(new Trie("Mathematics"));
         head.child.get(0).child.get(1).child.get(3).child.add(new Trie("mixed"));
+        head.child.get(0).child.get(1).child.get(3).child.get(0).child.add(new Trie("MCQ"));
+        head.child.get(0).child.get(1).child.get(3).child.get(0).child.add(new Trie("IVA"));
+        head.child.get(0).child.get(1).child.get(3).child.get(0).child.add(new Trie("SWA"));
+        head.child.get(0).child.get(1).child.get(3).child.get(0).child.add(new Trie("NAT"));
+
+
+
         head.child.get(0).child.get(1).child.add(new Trie("English"));
         head.child.get(0).child.get(1).child.get(4).child.add(new Trie("mixed"));
+        head.child.get(0).child.get(1).child.get(4).child.get(0).child.add(new Trie("MCQ"));
+        head.child.get(0).child.get(1).child.get(4).child.get(0).child.add(new Trie("IVA"));
+        head.child.get(0).child.get(1).child.get(4).child.get(0).child.add(new Trie("SWA"));
+        head.child.get(0).child.get(1).child.get(4).child.get(0).child.add(new Trie("NAT"));
+
+
+
         head.child.get(0).child.get(1).child.add(new Trie("Hindi"));
         head.child.get(0).child.get(1).child.get(5).child.add(new Trie("mixed"));
+        head.child.get(0).child.get(1).child.get(5).child.get(0).child.add(new Trie("MCQ"));
+        head.child.get(0).child.get(1).child.get(5).child.get(0).child.add(new Trie("IVA"));
+        head.child.get(0).child.get(1).child.get(5).child.get(0).child.add(new Trie("SWA"));
+        head.child.get(0).child.get(1).child.get(5).child.get(0).child.add(new Trie("NAT"));
+
+
+
+
         head.child.get(0).child.get(1).child.add(new Trie("Tamil"));
         head.child.get(0).child.get(1).child.get(6).child.add(new Trie("mixed"));
+        head.child.get(0).child.get(1).child.get(6).child.get(0).child.add(new Trie("MCQ"));
+        head.child.get(0).child.get(1).child.get(6).child.get(0).child.add(new Trie("IVA"));
+        head.child.get(0).child.get(1).child.get(6).child.get(0).child.add(new Trie("SWA"));
+        head.child.get(0).child.get(1).child.get(6).child.get(0).child.add(new Trie("NAT"));
 
 
 

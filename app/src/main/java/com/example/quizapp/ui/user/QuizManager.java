@@ -35,6 +35,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Timer;
@@ -69,7 +70,6 @@ public class QuizManager extends AppCompatActivity {
         exit = findViewById(R.id.exit);
         ok = findViewById(R.id.submit);
         waitProgressbar=findViewById(R.id.quiz_manager_progressbar);
-        progressbarTimer=new Timer();
 
 
 
@@ -191,6 +191,15 @@ public class QuizManager extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                            if(snapshot.getChildrenCount()==0){
+                                progressbarTimer.cancel();
+                                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
+                                waitProgressbar.setVisibility(View.GONE);
+                                Toast.makeText(getApplicationContext(), "currently question is  unavailable, would you like to contribute", Toast.LENGTH_SHORT).show();
+
+                                return;
+                            }
                             for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                                 Log.w("asdf", "working");
 
@@ -226,16 +235,16 @@ public class QuizManager extends AppCompatActivity {
                             progressbarTimer.cancel();
                             finish();
                             startActivity(intent);
-                        }
+                         }
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
                             progressbarTimer.cancel();
 
                             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                            Toast.makeText(getApplicationContext(), "error while fetching data", Toast.LENGTH_LONG).show();
-                            finish();
+                            Toast.makeText(getApplicationContext(), "error while fetching data", Toast.LENGTH_SHORT).show();
 
+                            return;
                         }
 
 
@@ -262,15 +271,25 @@ public class QuizManager extends AppCompatActivity {
                 Log.w("asdf", "progresss");
                 waitProgressbar.setProgress(progressbarCount);
                 if(progressbarCount>5){
-                    Toast.makeText(getApplicationContext(), "internet problem", Toast.LENGTH_LONG).show();
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(), "internet problem", Toast.LENGTH_SHORT).show();
+                            progressbarTimer.cancel();
+                            waitProgressbar.setVisibility(View.GONE);
+                            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
-                    progressbarTimer.cancel();
-                    waitProgressbar.setVisibility(View.GONE);
 
-                    finish();
+                        }
+                    });
+
+
+                     return;
+
                 }
             }
         };
+        progressbarTimer=new Timer();
 
         progressbarTimer.schedule(timerTask, 0, 1000);
     }

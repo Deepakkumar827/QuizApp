@@ -24,14 +24,19 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.quizapp.R;
+import com.example.quizapp.backend.Question.IVA;
+import com.example.quizapp.backend.Question.NAT;
 import com.example.quizapp.backend.Question.Question;
 import com.example.quizapp.backend.Question.MCQ;
+import com.example.quizapp.backend.Question.SWA;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -43,7 +48,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class QuizDashboard extends AppCompatActivity {
-/////////////
+    /////////////
+    ArrayList<String> only_question_list_string = new ArrayList<>();
 
     ArrayList<String> answer_given;
     List<Question> questionList;
@@ -52,6 +58,7 @@ public class QuizDashboard extends AppCompatActivity {
     CountDownTimer countDownTimer;
     int timervalue = 0;
     MCQ current;
+    Spinner question_list_spinner;
     Button btn_prev, btn_middle, btn_next;
     int total_question, question_unsolved, question_solved, question_wrong, question_correct;
     TextView timer, total_question_txt, question_unsolved_txt, question_solved_txt, question_wrong_txt, question_correct_txt, screenshot_textview_btn;
@@ -59,6 +66,7 @@ public class QuizDashboard extends AppCompatActivity {
     AlertDialog.Builder builder;
     File imagePath;
     File todeletefile;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +84,7 @@ public class QuizDashboard extends AppCompatActivity {
         question_correct_txt = findViewById(R.id.question_correct);
         question_wrong_txt = findViewById(R.id.question_wrong);
         screenshot_textview_btn = findViewById(R.id.screenshot_textview_btn);
+        question_list_spinner = findViewById(R.id.question_list_spinner);
 
 
         screenshot_textview_btn.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +115,35 @@ public class QuizDashboard extends AppCompatActivity {
         question_wrong = 0;
         question_correct = 0;
         updateTopBar();
+
+        int i=1;
+        for(Question question: questionList){
+            switch (question.getType()){
+                case "MCQ":
+                    only_question_list_string.add(i++ +" : "+ ((MCQ)question).getQuestion());
+                    break;
+                case "IVA":
+                    only_question_list_string.add(i++ +" : "+ ((IVA)question).getQuestion());
+                    break;
+                case "SWA":
+                    only_question_list_string.add(i++ +" : "+ ((SWA)question).getQuestion());
+                    break;
+                case "NAT":
+                    only_question_list_string.add(i++ +" : "+ ((NAT)question).getQuestion());
+                    break;
+
+                default:
+                    ////
+                    break;
+
+            }
+        }
+
+        ArrayAdapter<String> adapter_for_question_spinner= new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item,only_question_list_string );
+        question_list_spinner.setAdapter(adapter_for_question_spinner);
+
+
+
 
 
         countDownTimer = new CountDownTimer(timelimit_min * 60000, 1000) {
@@ -248,13 +286,13 @@ public class QuizDashboard extends AppCompatActivity {
     }
 
     private void share(Bitmap bitmap) {
-        Log.w("asdf", "777" );
+        Log.w("asdf", "777");
 
         String pathofBmp =
                 MediaStore.Images.Media.insertImage(getContentResolver(),
                         bitmap, "QuizApp_screenshot", "ccc");
         Uri uri = Uri.parse(pathofBmp);
-        Log.w("asdf", "777"+pathofBmp);
+        Log.w("asdf", "777" + pathofBmp);
 
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("image/*");

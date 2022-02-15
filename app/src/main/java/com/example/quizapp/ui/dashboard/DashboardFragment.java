@@ -226,7 +226,15 @@ public class DashboardFragment extends Fragment {
                     databaseReference.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if(snapshot.getChildrenCount()==0){
+                                progressbarTimer.cancel();
+                                getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
+                                waitProgressbar.setVisibility(View.GONE);
+                                Toast.makeText(getContext(), "currently question is  unavailable, would you like to contribute", Toast.LENGTH_SHORT).show();
+
+                                return;
+                            }
                             for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                                 Log.w("asdf", "working");
 
@@ -300,18 +308,25 @@ public class DashboardFragment extends Fragment {
 
                 Log.w("asdf", "progresss");
                 waitProgressbar.setProgress(progressbarCount);
-                if(progressbarCount>10){
-/*
-                    Toast.makeText(getContext(), "internet problem", Toast.LENGTH_LONG).show();
-*/
+                if(progressbarCount>15){
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getContext(), "internet problem", Toast.LENGTH_SHORT).show();
+                            progressbarTimer.cancel();
+                            waitProgressbar.setVisibility(View.GONE);
+                            getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
-                     progressbarTimer.cancel();
-                    waitProgressbar.setVisibility(View.GONE);
+                        }
+                    });
 
-                    getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
+
+                    return;
                 }
             }
         };
+        progressbarTimer=new Timer();
 
         progressbarTimer.schedule(timerTask, 0, 1000);
     }

@@ -10,6 +10,7 @@
     <androidx.cardview.widget.CardView
 
 
+        android:id="@+id/card656"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_margin="10dp"
@@ -24,7 +25,7 @@
             <ImageView
 
 
-                android:id="@+id/subject_cardview_image"
+                android:id="@+id/cardview_image"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_alignParentLeft="true"
@@ -35,33 +36,61 @@
                 android:src="@drawable/testing_purpose_24" />
 
             <TextView
-                android:id="@+id/subject_cardview_headtext"
+                android:id="@+id/standard_cardview_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-
-                android:layout_marginBottom="10dp"
-                android:layout_toRightOf="@+id/subject_cardview_image"
-                android:text="None"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
+                 android:layout_toEndOf="@+id/cardview_image"
+                android:text="standard"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/subject_cardview_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/standard_cardview_text"
+                android:layout_marginStart="10dp"
+
+                android:layout_toEndOf="@+id/cardview_image"
+                android:text="subject"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/chapter_cardview_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
-                android:layout_toRightOf="@+id/subject_cardview_image"
+                android:layout_marginStart="10dp"
+                 android:layout_marginBottom="20dp"
+                android:layout_toEndOf="@+id/cardview_image"
                 android:text="None"
                 android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/question_type_cardview_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:text="None"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/no_of_question_cardview_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="20dp"
+
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:text="None"
+                android:textSize="15sp" />
 
         </RelativeLayout>
 

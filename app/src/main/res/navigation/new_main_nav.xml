@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/new_main_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.quizapp.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.quizapp.ui.dashboard.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+    <activity
+        android:id="@+id/addQuestionDashboard"
+        android:name="com.example.quizapp.ui.addquestion.AddQuestionDashboard"
+        android:label="activity_add_question_manager"
+        tools:layout="@layout/activity_add_question_manager" />
+    <fragment
+        android:id="@+id/aboutMeFragment2"
+        android:name="com.example.quizapp.ui.about_me.AboutMeFragment"
+        android:label="fragment_about_me"
+        tools:layout="@layout/fragment_about_me" />
+</navigation>

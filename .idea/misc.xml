@@ -7,7 +7,10 @@
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/back.xml" value="0.18802083333333333" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/circle.xml" value="0.1953125" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/code_for_progressbar.xml" value="0.26614583333333336" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/default_background_in_gradient.xml" value="0.26614583333333336" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/gradient.xml" value="0.1140625" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/greadient_border.xml" value="0.26614583333333336" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/green_gradient_background.xml" value="0.26614583333333336" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.26614583333333336" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/progress_bar.xml" value="0.2625" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/drawable/round_border.xml" value="0.25052083333333336" />
@@ -16,13 +19,14 @@
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_add_question_manager.xml" value="0.2" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_instruction_for_add_button.xml" value="0.18385416666666668" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_instructions.xml" value="0.19166666666666668" />
-        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_main.xml" value="0.16" />
-        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_quiz_dashboard.xml" value="0.4" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_quiz_dashboard.xml" value="0.40336134453781514" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_quiz_manager.xml" value="0.24635416666666668" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/activity_show_result.xml" value="0.264" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/custom_timeout_dialog.xml" value="0.4" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_about_me.xml" value="0.25" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
-        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_home.xml" value="0.1892430278884462" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_i_v_a_add_q_dashboard.xml" value="0.25" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_i_v_a_add_question.xml" value="0.2" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_i_v_auser.xml" value="0.25" />
@@ -35,12 +39,14 @@
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_s_m_c_q4user.xml" value="0.25" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_s_w_a_add_question.xml" value="0.10849056603773585" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_s_w_auser.xml" value="0.17135416666666667" />
-        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/subject_cardview.xml" value="0.25" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/horizontal_card_scroll_view.xml" value="0.25" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/subject_cardview.xml" value="0.32038834951456313" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/menu/main_top_menu.xml" value="0.264" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

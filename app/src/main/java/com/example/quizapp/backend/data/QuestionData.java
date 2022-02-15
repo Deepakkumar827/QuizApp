@@ -11,7 +11,9 @@ public class QuestionData {
 
 
     }
-    public static void setmAD_SMCQ(){
+
+
+    /*public static void setmAD_SMCQ(){
         mAD_SMCQ.add(Question.createMCQ("Deepak","root","BTech CSE" ,"Mobile Application Development","mixed" ,"Android is -", "an operating system", "a web browser", "a web server", "None of the above", 1, "none"));
         mAD_SMCQ.add(Question.createMCQ("Deepak","root","BTech CSE" ,"Mobile Application Development","mixed" , "Under which of the following Android is licensed?", "OSS", "Sourceforge", "Apache/MIT", "None of the above", 3, "none"));
         mAD_SMCQ.add(Question.createMCQ("Deepak","root","BTech CSE" ,"Mobile Application Development","mixed" ,"For which of the following Android is mainly developed?", "Servers", "Desktops", "Laptops", "Mobile devices", 4, "none"));
@@ -26,5 +28,44 @@ public class QuestionData {
         mAD_SMCQ.add(Question.createMCQ("Deepak","root","BTech CSE" ,"Mobile Application Development","mixed" , "How can we kill an activity in android?", "Using finish() method", "Using finishActivity(int requestCode)", "Both (a) and (b)", "Neither (a) nor (b)", 3, "none"));
         mAD_SMCQ.add(Question.createMCQ("Deepak","root","BTech CSE" ,"Mobile Application Development","mixed" , "ADB stands for -", "Android debug bridge", "Android delete bridge", "Android destroy bridge", "None of the above", 1, "none"));
     }
+*/
+
+
+
+/*
+
+
+    head=new Trie("head");
+        head.child.add(new Trie("all"));
+        head.child.get(0).child.add(new Trie("10"));
+        head.child.get(0).child.add(new Trie("11"));
+        head.child.get(0).child.add(new Trie("12"));
+        head.child.get(0).child.add(new Trie("BTech CSE"));
+        head.child.get(0).child.add(new Trie("BTech Mechanical"));
+        head.child.get(0).child.add(new Trie("BTech ECE"));
+        head.child.get(0).child.add(new Trie("BTech Civil"));
+
+*/
+
+
+
+
+
+    public static void setmAD_SMCQ(){
+         mAD_SMCQ.add(Question.createMCQ("creater","root","standard" ,"subject","mixed" ,"Android", "choice1", "choice2", "choice3", "choice4", 1, "message"));
+        mAD_SMCQ.add(Question.createMCQ("creater","root","standard" ,"subject","mixed" ,"Android", "choice1", "choice2", "choice3", "choice4", 1, "message"));
+        mAD_SMCQ.add(Question.createMCQ("creater","root","standard" ,"subject","mixed" ,"Android", "choice1", "choice2", "choice3", "choice4", 1, "message"));
+        mAD_SMCQ.add(Question.createMCQ("creater","root","standard" ,"subject","mixed" ,"Android", "choice1", "choice2", "choice3", "choice4", 1, "message"));
+    }
+
+
+
+
+
+
+
+
+
+
 
 }

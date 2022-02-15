@@ -23,4 +23,11 @@
         android:name="com.example.quizapp.ui.notifications.NotificationsFragment"
         android:label="@string/title_Add"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_about_me"
+        android:name="com.example.quizapp.ui.about_me.AboutMeFragment"
+        android:label="@string/title_About_me"
+        tools:layout="@layout/fragment_about_me" />
+
+
 </navigation>
