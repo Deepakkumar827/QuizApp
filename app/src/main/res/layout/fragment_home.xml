@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,134 +8,33 @@
     android:paddingRight="10dp"
     tools:context=".ui.home.HomeFragment">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
-        <LinearLayout
-            android:id="@+id/linear77898"
-            android:layout_width="match_parent"
+        <AnalogClock
 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <DigitalClock
+            android:paddingTop="20dp"
+
+
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_weight="0.2"
-                    android:background="@color/lightblue"
-
-                    android:gravity="center"
-                    android:text="standard"
-
-                    android:textSize="16sp" />
-
-                <Spinner
-                    android:id="@+id/standard"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@color/lightblue" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/subject_card_list_linearLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:orientation="vertical">
+            android:textSize="25dp" />
 
 
-            </LinearLayout>
+    </LinearLayout>
 
 
-            <!-- <LinearLayout
-                android:id="@+id/subject_list"
-                android:layout_height="300dp"
-                android:layout_width="match_parent"
-                android:orientation="vertical">
-                <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/view_pager"
-                    android:layout_width="match_parent"
-                    android:clipToPadding="true"
-                    android:foregroundGravity="center"
-                    android:overScrollMode="never"
-                    android:layout_height="match_parent">
-
-                </androidx.viewpager.widget.ViewPager>
-
-            </LinearLayout>-->
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_below="@+id/linear77898"
-
-            android:id="@+id/random34ee"
-            android:layout_height="wrap_content"
-             android:orientation="vertical">
-
-            <Button
-                android:id="@+id/testbtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:layout_centerInParent="true"
-
-                android:layout_alignParentBottom="true"
-                android:text="test quiz manager" />
-        </LinearLayout>
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraint_33"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/random34ee"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true">
-
-
-            <LinearLayout
-                android:id="@+id/home_fragment_linear"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <include layout="@layout/dashboard2_cardview" />
-
-
-            </LinearLayout>
-
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-    </RelativeLayout>
-
-
-
-</androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
 

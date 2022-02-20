@@ -26,10 +26,14 @@
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/board1_cardview.xml" value="0.25" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/custom_timeout_dialog.xml" value="0.4" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/dashboard2_cardview.xml" value="0.25" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/dashboard3_main_recycler_row_item_list.xml" value="0.25" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/dashboard3_recycler_row_item.xml" value="0.25" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/dashboard3_second_recycler_item.xml" value="0.25" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_about_me.xml" value="0.25" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_board1.xml" value="0.25" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_dashboard2.xml" value="0.25" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_dashboard3.xml" value="0.25" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_i_v_a_add_q_dashboard.xml" value="0.25" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_i_v_a_add_question.xml" value="0.2" />
@@ -45,6 +49,7 @@
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/fragment_s_w_auser.xml" value="0.17135416666666667" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/horizontal_card_scroll_view.xml" value="0.25" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/progress_bar.xml" value="0.14895833333333333" />
+        <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/second_recycler_row_item.xml" value="0.25" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/subject_cardview.xml" value="0.32038834951456313" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/layout/test_layout.xml" value="0.20729166666666668" />
         <entry key="..\:/app_dev/QuizApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />

@@ -1,41 +1,23 @@
-package com.example.quizapp.ui.board1;
+package com.example.quizapp.ui.Dashboard2;
 
 
 import android.app.Activity;
-import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.quizapp.R;
-import com.example.quizapp.backend.Question.IVA;
-import com.example.quizapp.backend.Question.MCQ;
-import com.example.quizapp.backend.Question.NAT;
 import com.example.quizapp.backend.Question.Question;
-import com.example.quizapp.backend.Question.SWA;
- import com.example.quizapp.ui.user.QuizDashboard;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class Dashboard2ViewAdapter extends RecyclerView.Adapter<CardViewHolder> {
     ArrayList<CardData> cardDataList;
@@ -68,7 +50,6 @@ public class Dashboard2ViewAdapter extends RecyclerView.Adapter<CardViewHolder> 
             public void onClick(View v) {
 
                 CardData cardData=cardDataList.get(viewHolder.getAdapterPosition());
-                ////TODO: call user dashboard
 
                 listener.onCardClicked(cardDataList.get(viewHolder.getAdapterPosition()));
 
@@ -146,7 +127,6 @@ class CardData{
     int count=-1;
 
 
-
     public CardData(String board, String standard, String subject, String chapter, String type, int count) {
         this.board = board;
         this.standard = standard;
@@ -157,8 +137,5 @@ class CardData{
 
 
     }
-
-
-
 
 }

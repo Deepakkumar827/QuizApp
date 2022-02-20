@@ -38,15 +38,7 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
-    LinearLayout home_list;
-    CardView cardView1;
-    View v;
-    Spinner standard;
-    Trie subjectTrie;
-    LinearLayout subject_card_list_linearLayout;
-//    ViewPager viewPager;
-    ArrayList<Trie> viewpager_trie_arraylist;
-    MyAdapter myAdapter;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
@@ -62,21 +54,24 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        standard = getView().findViewById(R.id.standard);
-//        viewPager = view.findViewById(R.id.view_pager);
-
-        subject_card_list_linearLayout=getView().findViewById(R.id.subject_card_list_linearLayout);
-
-        for(int i=0; i<11; i++){
-            LinearLayout cardView=getView().findViewById(R.id.subject_cardview);
-            if(cardView.getParent() != null) {
-                ((ViewGroup)cardView.getParent()).removeView(cardView); // <- fix
-            }
-            subject_card_list_linearLayout.addView(cardView);
 
 
-        }
+    }
+}
 
+
+
+/*
+
+  LinearLayout home_list;
+    CardView cardView1;
+    View v;
+    Spinner standard;
+    Trie subjectTrie;
+    LinearLayout subject_card_list_linearLayout;
+//    ViewPager viewPager;
+    ArrayList<Trie> viewpager_trie_arraylist;
+    MyAdapter myAdapter;
 
         binding.testbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +86,8 @@ public class HomeFragment extends Fragment {
 //            viewpager_trie_arraylist=new ArrayList<>();
 //            viewpager_trie_arraylist.add(std);
         }
-       /* myAdapter=new MyAdapter(getContext(), viewpager_trie_arraylist);
+       */
+/* myAdapter=new MyAdapter(getContext(), viewpager_trie_arraylist);
         viewPager.setAdapter(myAdapter);
         viewPager.setPadding(100, 0 , 100, 0);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -111,7 +107,8 @@ public class HomeFragment extends Fragment {
             }
         });
 
-*/
+*//*
+
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item,list_std );
         standard.setAdapter(adapter1);
         standard.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -173,7 +170,8 @@ public class HomeFragment extends Fragment {
         return Dir.getInstanceOfDir().child.get(0).child.get(std_selected_index);
     }
 
-    /*ArrayList<String> getChapter(){
+    */
+/*ArrayList<String> getChapter(){
         int std_selected_index=standard.getSelectedItemPosition();
 
         int sub_selected_index=subject.getSelectedItemPosition();
@@ -185,8 +183,9 @@ public class HomeFragment extends Fragment {
 
 
 
-    }*/
+    }*//*
 
 
 
-}
+
+}*/

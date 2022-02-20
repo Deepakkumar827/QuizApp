@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_dashboard3">
 
     <fragment
         android:id="@+id/navigation_home"
@@ -13,15 +13,20 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/navigation_dashboard3"
+        android:name="com.example.quizapp.ui.Dashboard3.Dashboard3Fragment"
+        android:label="title_dashboard3"
+        tools:layout="@layout/fragment_dashboard3" />
+    <fragment
         android:id="@+id/navigation_dashboard2"
-        android:name="com.example.quizapp.ui.board1.Dashboard2Fragment"
+        android:name="com.example.quizapp.ui.Dashboard2.Dashboard2Fragment"
         android:label="@string/title_dashboard2"
         tools:layout="@layout/fragment_dashboard2" />
 
 
     <!-- <fragment
          android:id="@+id/navigation_board1"
-         android:name="com.example.quizapp.ui.board1.Dashboard2Fragmentment"
+         android:name="Dashboard1ard1.Dashboard2Fragmentment"
          android:label="@string/title_board1"
 
          tools:layout="@layout/fragment_board1" />-->

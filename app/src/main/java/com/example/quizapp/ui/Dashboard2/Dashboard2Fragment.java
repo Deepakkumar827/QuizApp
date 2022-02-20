@@ -1,4 +1,4 @@
-package com.example.quizapp.ui.board1;
+package com.example.quizapp.ui.Dashboard2;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,10 +30,8 @@ import com.example.quizapp.backend.Question.SWA;
 import com.example.quizapp.backend.data.Dir;
 import com.example.quizapp.backend.data.Trie;
 import com.example.quizapp.databinding.FragmentDashboard2Binding;
-import com.example.quizapp.databinding.FragmentHomeBinding;
 import com.example.quizapp.ui.home.MyAdapter;
 import com.example.quizapp.ui.user.QuizDashboard;
-import com.example.quizapp.ui.user.QuizManager;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -41,7 +39,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.Serializable;
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -54,14 +51,9 @@ public class Dashboard2Fragment extends Fragment implements CardClicked {
     int test = 0;
     FragmentDashboard2Binding binding;
 
-    LinearLayout home_list;
-    CardView cardView1;
-    View v;
     Spinner standard;
     Trie subjectParentTrie;
-    LinearLayout subject_card_list_linearLayout;
     List<Question> questionList;
-    MyAdapter myAdapter;
     ArrayList<CardData> cardDataArrayList = new ArrayList<>();
     DatabaseReference databaseReference;
     Timer progressbarTimer;
@@ -268,8 +260,7 @@ public class Dashboard2Fragment extends Fragment implements CardClicked {
             public void run() {
                 progressbarCount++;
 
-                Log.w("asdf", "progresss");
-                binding.dashboardboard2Progressbar.setProgress(progressbarCount);
+                 binding.dashboardboard2Progressbar.setProgress(progressbarCount);
                 if (progressbarCount > 15) {
                     getActivity().runOnUiThread(new Runnable() {
                         @Override

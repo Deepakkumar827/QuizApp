@@ -59,6 +59,7 @@ public class AddToFirebase {
             public void onSuccess(Void unused) {
 
 
+
                 //Setting message manually and performing action on button click
                 builder.setMessage("Success")
                         .setCancelable(false)

@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.board1.Dashboard2Fragment">
+    tools:context=".ui.Dashboard2.Dashboard2Fragment">
 
 
     <androidx.recyclerview.widget.RecyclerView

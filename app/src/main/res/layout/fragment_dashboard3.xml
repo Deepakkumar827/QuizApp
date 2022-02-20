@@ -14,7 +14,7 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
@@ -52,7 +52,7 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/main_recycler_view"
+            android:id="@+id/dashboard3_main_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -63,7 +63,7 @@
 
     </LinearLayout>
     <ProgressBar
-        android:id="@+id/dashboardboard2_progressbar"
+        android:id="@+id/dashboardboard3_progressbar"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:padding="10dp"

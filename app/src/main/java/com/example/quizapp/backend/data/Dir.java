@@ -145,14 +145,6 @@ public class Dir {
         head.child.get(0).child.get(0).child.get(12).child.get(0).child.add(new Trie("NAT"));
         head.child.get(0).child.get(0).child.get(12).child.get(0).child.add(new Trie("SWA"));
 
-        head.child.get(0).child.get(0).child.add(new Trie("Database Management Systems"));
-        head.child.get(0).child.get(0).child.get(12).child.add(new Trie("Mixed"));
-        head.child.get(0).child.get(0).child.get(12).child.get(0).child.add(new Trie("Mixed"));
-        head.child.get(0).child.get(0).child.get(12).child.get(0).child.add(new Trie("MCQ"));
-        head.child.get(0).child.get(0).child.get(12).child.get(0).child.add(new Trie("IVA"));
-        head.child.get(0).child.get(0).child.get(12).child.get(0).child.add(new Trie("NAT"));
-        head.child.get(0).child.get(0).child.get(12).child.get(0).child.add(new Trie("SWA"));
-
         head.child.get(0).child.get(0).child.add(new Trie("Algorithms"));
         head.child.get(0).child.get(0).child.get(13).child.add(new Trie("Mixed"));
         head.child.get(0).child.get(0).child.get(13).child.get(0).child.add(new Trie("Mixed"));
@@ -201,7 +193,22 @@ public class Dir {
         head.child.get(0).child.get(0).child.get(16).child.get(0).child.add(new Trie("NAT"));
         head.child.get(0).child.get(0).child.get(16).child.get(0).child.add(new Trie("SWA"));
 
+        head.child.get(0).child.get(0).child.add(new Trie("Database Management Systems"));
+        head.child.get(0).child.get(0).child.get(17).child.add(new Trie("Mixed"));
+        head.child.get(0).child.get(0).child.get(17).child.get(0).child.add(new Trie("Mixed"));
+        head.child.get(0).child.get(0).child.get(17).child.get(0).child.add(new Trie("MCQ"));
+        head.child.get(0).child.get(0).child.get(17).child.get(0).child.add(new Trie("IVA"));
+        head.child.get(0).child.get(0).child.get(17).child.get(0).child.add(new Trie("NAT"));
+        head.child.get(0).child.get(0).child.get(17).child.get(0).child.add(new Trie("SWA"));
+        /*head.child.get(0).child.get(0).child.add(new Trie("Database Management Systems"));
+        head.child.get(0).child.get(0).child.get(18).child.add(new Trie("Mixed"));
+        head.child.get(0).child.get(0).child.get(18).child.get(0).child.add(new Trie("Mixed"));
+        head.child.get(0).child.get(0).child.get(18).child.get(0).child.add(new Trie("MCQ"));
+        head.child.get(0).child.get(0).child.get(18).child.get(0).child.add(new Trie("IVA"));
+        head.child.get(0).child.get(0).child.get(18).child.get(0).child.add(new Trie("NAT"));
+        head.child.get(0).child.get(0).child.get(18).child.get(0).child.add(new Trie("SWA"));
 
+*/
 
 
 
@@ -582,6 +589,9 @@ public class Dir {
         head.child.get(0).child.get(5).child.get(8).child.get(0).child.add(new Trie("NAT"));
         head.child.get(0).child.get(5).child.get(8).child.get(0).child.add(new Trie("SWA"));
 
+
+
+        //////////////
         head.child.get(0).child.get(5).child.add(new Trie("Wireless Communication"));
         head.child.get(0).child.get(5).child.get(9).child.add(new Trie("Mixed"));
         head.child.get(0).child.get(5).child.get(9).child.get(0).child.add(new Trie("Mixed"));
@@ -589,6 +599,45 @@ public class Dir {
         head.child.get(0).child.get(5).child.get(9).child.get(0).child.add(new Trie("IVA"));
         head.child.get(0).child.get(5).child.get(9).child.get(0).child.add(new Trie("NAT"));
         head.child.get(0).child.get(5).child.get(9).child.get(0).child.add(new Trie("SWA"));
+
+        head.child.get(0).child.get(5).child.get(9).child.add(new Trie("Wireless services"));
+        head.child.get(0).child.get(5).child.get(9).child.get(1).child.add(new Trie("Mixed"));
+        head.child.get(0).child.get(5).child.get(9).child.get(1).child.add(new Trie("MCQ"));
+        head.child.get(0).child.get(5).child.get(9).child.get(1).child.add(new Trie("IVA"));
+        head.child.get(0).child.get(5).child.get(9).child.get(1).child.add(new Trie("NAT"));
+        head.child.get(0).child.get(5).child.get(9).child.get(1).child.add(new Trie("SWA"));
+
+        head.child.get(0).child.get(5).child.get(9).child.add(new Trie("Wireless services"));
+        head.child.get(0).child.get(5).child.get(9).child.get(2).child.add(new Trie("Mixed"));
+        head.child.get(0).child.get(5).child.get(9).child.get(2).child.add(new Trie("MCQ"));
+        head.child.get(0).child.get(5).child.get(9).child.get(2).child.add(new Trie("IVA"));
+        head.child.get(0).child.get(5).child.get(9).child.get(2).child.add(new Trie("NAT"));
+        head.child.get(0).child.get(5).child.get(9).child.get(2).child.add(new Trie("SWA"));
+
+        head.child.get(0).child.get(5).child.get(9).child.add(new Trie("Wireless services"));
+        head.child.get(0).child.get(5).child.get(9).child.get(3).child.add(new Trie("Mixed"));
+        head.child.get(0).child.get(5).child.get(9).child.get(3).child.add(new Trie("MCQ"));
+        head.child.get(0).child.get(5).child.get(9).child.get(3).child.add(new Trie("IVA"));
+        head.child.get(0).child.get(5).child.get(9).child.get(3).child.add(new Trie("NAT"));
+        head.child.get(0).child.get(5).child.get(9).child.get(3).child.add(new Trie("SWA"));
+
+        head.child.get(0).child.get(5).child.get(9).child.add(new Trie("Wireless services"));
+        head.child.get(0).child.get(5).child.get(9).child.get(4).child.add(new Trie("Mixed"));
+        head.child.get(0).child.get(5).child.get(9).child.get(4).child.add(new Trie("MCQ"));
+        head.child.get(0).child.get(5).child.get(9).child.get(4).child.add(new Trie("IVA"));
+        head.child.get(0).child.get(5).child.get(9).child.get(4).child.add(new Trie("NAT"));
+        head.child.get(0).child.get(5).child.get(9).child.get(4).child.add(new Trie("SWA"));
+
+        head.child.get(0).child.get(5).child.get(9).child.add(new Trie("Wireless services"));
+        head.child.get(0).child.get(5).child.get(9).child.get(5).child.add(new Trie("Mixed"));
+        head.child.get(0).child.get(5).child.get(9).child.get(5).child.add(new Trie("MCQ"));
+        head.child.get(0).child.get(5).child.get(9).child.get(5).child.add(new Trie("IVA"));
+        head.child.get(0).child.get(5).child.get(9).child.get(5).child.add(new Trie("NAT"));
+        head.child.get(0).child.get(5).child.get(9).child.get(5).child.add(new Trie("SWA"));
+
+
+
+
 
         head.child.get(0).child.get(5).child.add(new Trie("Embedded System"));
         head.child.get(0).child.get(5).child.get(10).child.add(new Trie("Mixed"));
