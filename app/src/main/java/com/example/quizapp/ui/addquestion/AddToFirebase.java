@@ -8,6 +8,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.FragmentActivity;
 
 import com.example.quizapp.backend.Question.Question;
+import com.example.quizapp.backend.data.QuestionData;
 import com.example.quizapp.backend.firebase.FireBaseManager;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,6 +28,12 @@ public class AddToFirebase {
         Toast.makeText(activity.getApplicationContext(),"Please Wait",Toast.LENGTH_LONG).show();
 
         FireBaseManager fireBaseManager=new FireBaseManager();
+        /*for(Question q: QuestionData.mAD_SMCQ){
+            fireBaseManager.add(q);
+        }
+        if (1==1){
+            return;
+        }*/
 
 
 

@@ -123,7 +123,7 @@ public class SWAAddQuestionFragment extends Fragment {
                 }
 
                 else {
-                    Question question = Question.createSWA(cr,"root",std,sub,  chapter, qs, ans, msg);
+                    Question question = Question.createSWA(cr,"Root",std,sub,  chapter, qs, ans, msg);
 
 
                     AddToFirebase.add(getActivity(), question);

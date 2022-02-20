@@ -23,6 +23,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.quizapp.MainActivity;
 import com.example.quizapp.R;
 import com.example.quizapp.backend.data.DATA;
 import com.example.quizapp.backend.data.Dir;
@@ -77,6 +78,12 @@ public class HomeFragment extends Fragment {
         }
 
 
+        binding.testbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), QuizManager.class));
+            }
+        });
         ArrayList<String> list_std=new ArrayList<>();
         for(Trie std: Dir.getInstanceOfDir().child.get(0).child ){
             list_std.add(std.name);
@@ -112,10 +119,10 @@ public class HomeFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 subjectTrie=getTrieSubjectList();
-                Log.w("asdf1", subjectTrie.name);
+                Log.w("asdf1--=-", subjectTrie.name);
 
                 for(Trie t:subjectTrie.child){
-                    Log.w("asdf2", t.name);
+                    Log.w("asdf2=-", t.name);
 
                 }
             }

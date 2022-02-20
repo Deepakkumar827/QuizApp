@@ -5,6 +5,10 @@
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
+    <item
+        android:id="@+id/navigation_dashboard2"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_dashboard2" />
 
     <item
         android:id="@+id/navigation_dashboard"
@@ -15,9 +19,6 @@
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/ic_notifications_black_24dp"
         android:title="@string/title_Add" />
-    <item
-        android:id="@+id/navigation_about_me"
-        android:icon="@drawable/round_border"
-        android:title="@string/title_About_me"/>
+
 
 </menu>

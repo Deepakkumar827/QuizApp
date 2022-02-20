@@ -64,6 +64,8 @@ public class QuizDashboard extends AppCompatActivity {
     TextView timer, total_question_txt, question_unsolved_txt, question_solved_txt, question_wrong_txt, question_correct_txt, screenshot_textview_btn;
     int timelimit_min = 600;
     AlertDialog.Builder builder;
+    AlertDialog.Builder builderBackAlert;
+    AlertDialog.Builder builderBackAlert2;
     File imagePath;
     File todeletefile;
 
@@ -76,6 +78,8 @@ public class QuizDashboard extends AppCompatActivity {
         btn_next = findViewById(R.id.btn_next);
         timer = findViewById(R.id.timer);
         builder = new AlertDialog.Builder(QuizDashboard.this);
+        builderBackAlert = new AlertDialog.Builder(QuizDashboard.this);
+        builderBackAlert2 = new AlertDialog.Builder(QuizDashboard.this);
 
 
         total_question_txt = findViewById(R.id.question_total);
@@ -191,6 +195,41 @@ public class QuizDashboard extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+        builderBackAlert.setMessage("Do you want to go exit")
+                .setCancelable(false)
+                .setPositiveButton("EXIT", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                        Intent intent = new Intent(getApplicationContext(), ShowResultActivity.class);
+                        intent.putExtra("total", Integer.toString(total_question));
+                        intent.putExtra("solved", Integer.toString(question_solved));
+                        intent.putExtra("unsolved", Integer.toString(question_unsolved));
+                        intent.putExtra("correct", Integer.toString(question_correct));
+                        intent.putExtra("wrong", Integer.toString(question_wrong));
+
+                        startActivity(intent);
+
+                    }
+                }).setNegativeButton("BACK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                /////////nothing to do
+            }
+        });
+        //Creating dialog box
+        AlertDialog alert = builderBackAlert.create();
+        //Setting the title manually
+        alert.setTitle("Alert");
+        alert.getWindow().setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND, 1);
+        alert.show();
+
+     }
+
+
+
     private void callNext(List<Question> questionList, int i) {
         if (i < 0) {
             Toast.makeText(getApplicationContext(), "you have come to the start of question", Toast.LENGTH_LONG).show();
@@ -303,6 +342,7 @@ public class QuizDashboard extends AppCompatActivity {
 
 
     }
+
 }
 
 

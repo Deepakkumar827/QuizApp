@@ -20,9 +20,5 @@
         android:name="com.example.quizapp.ui.addquestion.AddQuestionDashboard"
         android:label="activity_add_question_manager"
         tools:layout="@layout/activity_add_question_manager" />
-    <fragment
-        android:id="@+id/aboutMeFragment2"
-        android:name="com.example.quizapp.ui.about_me.AboutMeFragment"
-        android:label="fragment_about_me"
-        tools:layout="@layout/fragment_about_me" />
+
 </navigation>

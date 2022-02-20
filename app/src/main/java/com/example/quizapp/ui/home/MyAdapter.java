@@ -38,7 +38,7 @@ public class MyAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        View view = LayoutInflater.from(context).inflate(R.layout.subject_cardview, container, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.dashboard2_cardview, container, false);
         TextView name=view.findViewById(R.id.subject_cardview_text);
 
         Trie trie=modelArrayList.get(position);

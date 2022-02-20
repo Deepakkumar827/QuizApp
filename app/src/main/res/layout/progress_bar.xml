@@ -18,6 +18,7 @@ not implemented
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="100dp"
+        android:background="#8C6F6F"
         android:layout_height="100dp"
         android:indeterminateOnly="false"
         tools:progress="40"

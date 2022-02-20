@@ -48,6 +48,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -124,8 +125,7 @@ public class DashboardFragment extends Fragment {
 
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, DATA.test_type);
         test_type.setAdapter(adapter3);
-        test_type.setSelection(adapter3.getPosition("SWA"));
-//        test_type.setEnabled(false);
+ //        test_type.setEnabled(false);
 
         standard.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -186,7 +186,8 @@ public class DashboardFragment extends Fragment {
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getFragmentManager().popBackStack();
+//                getActivity().onBackPressed();
+                requireActivity().onBackPressed();
 
             }
         });
@@ -197,9 +198,11 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                waitProgressbar.setVisibility(View.VISIBLE);
 
-                questionList.clear();
+                databaseReference=null;
+                questionList=new ArrayList<>();
+                progressbarCount = 0;
+                waitProgressbar.setVisibility(View.VISIBLE);
 
                 progressbar();
                 Intent intent = new Intent(getContext(), QuizDashboard.class);
@@ -221,7 +224,7 @@ public class DashboardFragment extends Fragment {
 
 
 //                    String folder = "MAD-IVA";
-                    databaseReference = FirebaseDatabase.getInstance().getReference().child("root").child(standard_txt).child(subject_txt).child(chapter_txt).child(test_type_txt);
+                    databaseReference = FirebaseDatabase.getInstance().getReference().child("Root").child(standard_txt).child(subject_txt).child(chapter_txt).child(test_type_txt);
 //                    databaseReference = FirebaseDatabase.getInstance().getReference().child(board+"/"+standard+"/"+subject_txt+"/"+chapter+"/"+test_type_txt);
                     databaseReference.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -270,7 +273,7 @@ public class DashboardFragment extends Fragment {
                              progressbarTimer.cancel();
 //                            getActivity().finish();
                             startActivity(intent);
-                            getFragmentManager().popBackStack();
+                            getActivity().onBackPressed();
 
                         }
 

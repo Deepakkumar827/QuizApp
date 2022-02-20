@@ -13,21 +13,32 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/navigation_dashboard2"
+        android:name="com.example.quizapp.ui.board1.Dashboard2Fragment"
+        android:label="@string/title_dashboard2"
+        tools:layout="@layout/fragment_dashboard2" />
+
+
+    <!-- <fragment
+         android:id="@+id/navigation_board1"
+         android:name="com.example.quizapp.ui.board1.Dashboard2Fragmentment"
+         android:label="@string/title_board1"
+
+         tools:layout="@layout/fragment_board1" />-->
+
+    <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.example.quizapp.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
+
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.quizapp.ui.notifications.NotificationsFragment"
         android:label="@string/title_Add"
         tools:layout="@layout/fragment_notifications" />
-    <fragment
-        android:id="@+id/navigation_about_me"
-        android:name="com.example.quizapp.ui.about_me.AboutMeFragment"
-        android:label="@string/title_About_me"
-        tools:layout="@layout/fragment_about_me" />
+
 
 
 </navigation>

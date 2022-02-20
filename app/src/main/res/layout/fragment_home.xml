@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <LinearLayout
             android:id="@+id/linear77898"
             android:layout_width="match_parent"
@@ -61,6 +62,7 @@
 
             </LinearLayout>
 
+
             <!-- <LinearLayout
                 android:id="@+id/subject_list"
                 android:layout_height="300dp"
@@ -81,12 +83,31 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_below="@+id/linear77898"
+
+            android:id="@+id/random34ee"
+            android:layout_height="wrap_content"
+             android:orientation="vertical">
+
+            <Button
+                android:id="@+id/testbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_centerInParent="true"
+
+                android:layout_alignParentBottom="true"
+                android:text="test quiz manager" />
+        </LinearLayout>
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraint_33"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/linear77898"
+            android:layout_below="@+id/random34ee"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true">
 
@@ -101,17 +122,20 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <include layout="@layout/subject_cardview" />
+                <include layout="@layout/dashboard2_cardview" />
 
 
             </LinearLayout>
 
 
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
     </RelativeLayout>
 
 
+
 </androidx.core.widget.NestedScrollView>
 
- 

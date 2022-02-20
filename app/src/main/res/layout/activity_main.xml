@@ -27,6 +27,8 @@
             android:layout_centerInParent="true"
             app:defaultNavHost="true"
             app:navGraph="@navigation/mobile_navigation" />
+
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -52,6 +54,7 @@
 
 
     </RelativeLayout>
+
 
 
 

@@ -106,7 +106,7 @@ public class IVAAddQuestionFragment extends Fragment {
                 }
                 else{
                     int ans=Integer.parseInt(s_ans);
-                    Question question=Question.createIVA(cr,"root",std,  sub, chapter, qs, ans, msg);
+                    Question question=Question.createIVA(cr,"Root",std,  sub, chapter, qs, ans, msg);
 
 //                    Test.abc();
 

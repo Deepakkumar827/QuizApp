@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.quizapp.R;
 import com.example.quizapp.backend.Question.Question;
+import com.example.quizapp.backend.data.QuestionData;
 import com.example.quizapp.backend.firebase.FireBaseManager;
 
 /**
@@ -133,7 +134,7 @@ public class MCQAddQuestionFragment extends Fragment {
                 else {
                     int check=0;
                     int  ans=Integer.parseInt(s_ans);
-                    Question question=Question.createMCQ(cr,"root",std,  sub, chapter, qs,opt1, opt2, opt3, opt4, ans, msg);
+                    Question question=Question.createMCQ(cr,"Root",std,  sub, chapter, qs,opt1, opt2, opt3, opt4, ans, msg);
                      AddToFirebase.add(getActivity(), question);
 
 //                    for(Question q: QuestionData.mAD_SMCQ){
